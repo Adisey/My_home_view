@@ -1,0 +1,40 @@
+@import "./src/styles/mixins/adaptive";
+.main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  .list {
+    align-items: center;
+    margin: 20px;
+    display: grid;
+    gap: 0;
+    grid-template-areas: "flor1 flor2 flor3";
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .flor1 {
+      grid-area: flor1;
+    }
+
+    .flor2 {
+      grid-area: flor2;
+    }
+
+    .flor3 {
+      grid-area: flor3;
+    }
+
+    @include adaptive("extra-large") {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "flor1 flor2"
+        "flor3 .";
+    }
+    @include adaptive("large") {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "flor1"
+        "flor2"
+        "flor3";
+    }
+  }
+}

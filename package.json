@@ -1,0 +1,42 @@
+{
+  "name": "my-home-view",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "debug": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "12.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.33.1",
+    "sass": "^1.53.0"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^12.2.0",
+    "@svgr/webpack": "^6.2.1",
+    "@types/classnames": "^2.3.1",
+    "@types/node": "18.0.1",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-order-config-standard": "^0.1.3",
+    "stylelint-prettier": "^2.0.0",
+    "typescript": "4.7.4"
+  }
+}

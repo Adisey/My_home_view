@@ -1,0 +1,46 @@
+.main {
+  border: 1px solid red;
+  .title {
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .content {
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    display: grid;
+  }
+}
+
+.floor1 {
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  column-gap: 0;
+  .hall {
+    //border: 1px solid blue;
+    grid-area: 6/1/11/11;
+    padding: 5px 20px 20px 20px;
+  }
+  .kitchen {
+    //border: 1px solid red;
+    padding: 20px 20px 5px 5px;
+    grid-area: 1/7/6/11;
+  }
+  .livingRoom {
+    padding: 20px 5px 5px 20px;
+    //border: 1px solid green;
+    grid-area: 1/1/6/7;
+  }
+}
+
+.sss {
+  height: 100%;
+  width: 100%;
+  background: #46cfee;
+}
+.sss2 {
+  height: 100%;
+  width: 100%;
+  background: #46cfee;
+}

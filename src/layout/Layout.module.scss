@@ -1,0 +1,21 @@
+.mainWrapper {
+  display: grid;
+  padding: 0;
+  height: 100vh;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr auto;
+  .header {
+    grid-area: header;
+  }
+  .content {
+    overflow: auto;
+    grid-area: content;
+  }
+  .footer {
+    grid-area: footer;
+  }
+}
