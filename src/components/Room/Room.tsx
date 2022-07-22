@@ -1,20 +1,11 @@
 import React from "react";
 import CSS from "csstype";
 import { IDivMainProps } from "../../interfaces/div.main.props";
+import { IRoomSettings } from "../../settings/myHouse";
 import cx from "classnames";
 import Styles from "./Room.module.scss";
 
-interface IRoom extends IDivMainProps {
-  startRow?: number;
-  startCol?: number;
-  endRow?: number;
-  endCol?: number;
-  wallUp?: number;
-  wallRight?: number;
-  wallDown?: number;
-  wallLeft?: number;
-  title?: string;
-}
+type IRoom = IDivMainProps & IRoomSettings;
 
 export const Room: React.FC<IRoom> = ({
   startRow = 1,
