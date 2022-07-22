@@ -6,7 +6,9 @@ import Styles from "./FloorsList.module.scss";
 export const FloorsList: React.FC = () => {
   const myHome = myHomeSettings.floors
     ?.reverse()
-    .map((floor: IHouseFloorSettings) => <Floor {...floor} />);
+    .map((floor: IHouseFloorSettings, index: number) => (
+      <Floor key={floor + index.toString()} {...floor} />
+    ));
 
   return (
     <div className={Styles.main}>

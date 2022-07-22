@@ -1,3 +1,12 @@
+export type IFloorsName = "Ground floor" | "First floor" | "Second floor";
+export type IRoomsName =
+  | "boiler room"
+  | "hall"
+  | "kitchen"
+  | "living room"
+  | "bedroom 1"
+  | "bedroom 2";
+
 export type IRoomSettings = {
   startRow?: number;
   startCol?: number;
@@ -7,12 +16,12 @@ export type IRoomSettings = {
   wallRight?: number;
   wallDown?: number;
   wallLeft?: number;
-  title?: string;
+  title?: IRoomsName;
 };
 export type IFloorSettings = {
   columnCount?: number;
   rowCount?: number;
-  title?: string;
+  title?: IFloorsName;
 };
 
 export type IHouseFloorSettings = IFloorSettings & {
@@ -60,7 +69,7 @@ export const myHomeSettings: IHouseSettings = {
           wallLeft: 15,
         },
         {
-          title: "kitchen",
+          title: "living room",
           startRow: 1,
           startCol: 1,
           endRow: 6,

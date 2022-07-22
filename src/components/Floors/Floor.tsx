@@ -23,7 +23,9 @@ export const Floor: React.FC<IFloor> = ({
     gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
     gridTemplateRows: `repeat(${rowCount}, 1fr)`,
   };
-  const myRooms = rooms?.map((room: IRoomSettings) => <Room {...room} />);
+  const myRooms = rooms?.map((room: IRoomSettings, index: number) => (
+    <Room key={title + index.toString()} {...room} />
+  ));
 
   return (
     <div {...props} className={cx(Styles.main, className)}>

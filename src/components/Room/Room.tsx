@@ -2,6 +2,8 @@ import React from "react";
 import CSS from "csstype";
 import { IDivMainProps } from "../../interfaces/div.main.props";
 import { IRoomSettings } from "../../settings/myHouse";
+import { useIsLightsRoom } from "../../hooks";
+import { Light } from "../";
 import cx from "classnames";
 import Styles from "./Room.module.scss";
 
@@ -32,6 +34,8 @@ export const Room: React.FC<IRoom> = ({
     paddingLeft: `${wallLeft}px`,
   };
 
+  const isLight = useIsLightsRoom(title);
+  console.log(Date.now(), "-(Room)->", title, `-isLight->`, isLight);
   return (
     <div
       {...props}
@@ -41,7 +45,10 @@ export const Room: React.FC<IRoom> = ({
       <div title={title} className={Styles.title}>
         {title}
       </div>
-      <div className={Styles.covering}>{children}</div>
+      <div className={Styles.covering}>
+        {isLight ? <Light /> : null}
+        {children}
+      </div>
     </div>
   );
 };
