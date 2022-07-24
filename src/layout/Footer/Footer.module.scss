@@ -2,7 +2,9 @@
 
 .main {
   display: grid;
+
   height: 20px;
+
   border: 1px solid black;
   column-gap: 0;
   grid-template-areas: "left center right";
@@ -10,29 +12,33 @@
 
   .leftPlace {
     display: grid;
-    max-width: 200px;
     align-items: center;
+
+    max-width: 200px;
+    padding: 0 10px;
     grid-area: left;
     grid-template-columns: minmax(100px, 1fr);
-    padding: 0 10px;
   }
 
   .centerPlace {
-    padding: 0 10px;
     display: grid;
-    border-right: 1px solid black;
     align-items: center;
-    grid-area: center;
+
+    padding: 0 10px;
+
+    border-right: 1px solid black;
     border-left: 1px solid black;
+    grid-area: center;
   }
 
   .rightPlace {
-    padding: 0 10px;
     display: grid;
     justify-content: end;
+
+    max-width: 100px;
+    padding: 0 10px;
     column-gap: 10px;
     grid-area: right;
     grid-template-columns: minmax(1fr, 200px);
-    max-width: 100px;
   }
 }

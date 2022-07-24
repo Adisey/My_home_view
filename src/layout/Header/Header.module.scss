@@ -2,25 +2,20 @@
 
 .main {
   display: grid;
+
   height: 45px;
   column-gap: 10px;
   grid-template-areas: "logo title right";
   grid-template-columns: auto 1fr auto;
 
-  @include adaptive("mini") {
-    grid-template-areas:
-      "logo"
-      "title"
-      "right";
-  }
-
   .logoPlace {
     display: grid;
-    max-width: 200px;
     align-items: center;
+
+    max-width: 200px;
+    margin-left: 10px;
     grid-area: logo;
     grid-template-columns: minmax(100px, 1fr);
-    margin-left: 10px;
   }
 
   .titlePlace {
@@ -31,16 +26,26 @@
   }
 
   .rightPlace {
-    margin-right: 10px;
     display: grid;
-    column-gap: 10px;
     align-items: center;
     justify-content: center;
+
+    margin-right: 10px;
+    column-gap: 10px;
     grid-area: right;
     grid-template-columns: minmax(1fr, 200px);
+
     a {
-      font-size: 16px;
       text-decoration: underline darkgray;
+
+      font-size: 16px;
     }
+  }
+
+  @include adaptive("mini") {
+    grid-template-areas:
+      "logo"
+      "title"
+      "right";
   }
 }

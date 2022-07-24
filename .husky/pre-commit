@@ -1,6 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-
-yarn stylelint --fix "src/**/*.{css, scss}"
+yarn stylelint --fix "src/**/*.{css,scss}"
 yarn eslint --fix "src/**/*.ts*"
