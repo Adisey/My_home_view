@@ -57,8 +57,8 @@ export const myHomeSettings: IHouseSettings = {
           title: "hall",
           startRow: 6,
           startCol: 1,
-          endRow: 10,
-          endCol: 10,
+          endRow: 11,
+          endCol: 11,
         },
         {
           title: "kitchen",

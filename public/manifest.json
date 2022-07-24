@@ -1,6 +1,14 @@
 {
-  "short_name": "My Home",
   "name": "My Home",
+  "short_name": "Home",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "prefer_related_applications": true,
+  "scope": "/",
+  "splash_pages": null,
+  "start_url": "/",
+  "theme_color": "#000000",
   "icons": [
     {
       "src": "./favicon.ico",
@@ -17,10 +25,5 @@
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": "https://localhost/",
-  "prefer_related_applications": true,
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }

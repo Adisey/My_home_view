@@ -23,13 +23,15 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <title>{title}</title>
-          <meta property="og:title" content={title} key="title" />
-          <meta name="description" content={title} />
-          <link rel="manifest" href="/manifest.json" />
+          <meta charSet="utf-8" />
           <meta
             name="viewport"
-            content="initial-scale=1.0, width=device-width"
+            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
           />
+          <meta property="og:title" content={title} key="title" />
+          <meta name="description" content={title} />
+          <meta name="keywords" content="Keywords" />
+          <link rel="manifest" href="/manifest.json" />
           <Favicon />
         </Head>
         <body>

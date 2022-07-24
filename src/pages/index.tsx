@@ -1,9 +1,9 @@
 import React from "react";
 import type { NextPage } from "next";
-import { withLayout } from "../layout/Layout";
-import mainStyles from "../styles/main.module.scss";
 import Head from "next/head";
-import { FloorsList } from "../components/FloorsList/FloorsList";
+import { withLayout } from "../layout/Layout";
+import { FloorsList } from "../components";
+import mainStyles from "../styles/main.module.scss";
 
 const Home: NextPage = () => {
   return (
