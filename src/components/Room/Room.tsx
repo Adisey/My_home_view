@@ -1,7 +1,6 @@
 import React from "react";
 import CSS from "csstype";
-import { IDivMainProps } from "../../interfaces/div.main.props";
-import { IRoomSettings } from "../../settings/myHouse";
+import { IDivMainProps, IRoomSettings } from "../../interfaces";
 import { Light } from "../";
 import cx from "classnames";
 import Styles from "./Room.module.scss";

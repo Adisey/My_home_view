@@ -8,6 +8,8 @@
   grid-template-areas: "logo title right";
   grid-template-columns: auto 1fr auto;
 
+  border-bottom: 1px solid black;
+
   .logoPlace {
     display: grid;
     align-items: center;

@@ -1,19 +1,32 @@
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { IHouseFloorSettings } from "../interfaces";
+import { useFloors } from "../hooks";
 import { withLayout } from "../layout/Layout";
+import { getFloors } from "../middleware";
 import { FloorsList } from "../components";
 import mainStyles from "../styles/main.module.scss";
 
-const Home: NextPage = () => {
+interface IHomeProps {
+  floors?: IHouseFloorSettings[];
+}
+
+const Home: NextPage<IHomeProps> = (props: IHomeProps) => {
+  const floors = useFloors();
   return (
     <div className={mainStyles.main}>
       <Head>
         <title>My Home</title>
       </Head>
-      <FloorsList />
+      <FloorsList floors={floors.length ? floors : props.floors || []} />
     </div>
   );
 };
 
 export default withLayout(Home);
+
+export const getServerSideProps = async () => {
+  const floors = getFloors();
+  return { props: { floors } };
+};

@@ -20,7 +20,3 @@ export type IFloorSettings = {
 export type IHouseFloorSettings = IFloorSettings & {
   rooms?: Array<IRoomSettings>;
 };
-
-export type IHouseSettings = {
-  floors?: Array<IHouseFloorSettings>;
-};

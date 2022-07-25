@@ -1,6 +1,5 @@
 import React from "react";
 import { IDivMainProps } from "../../interfaces/";
-import { IRoomsName } from "../../settings/myHouse";
 import { useIsLight } from "../../hooks";
 import { lightOff, lightOn } from "../../middleware";
 import Lamp from "./lamp.svg";
@@ -8,7 +7,7 @@ import cx from "classnames";
 import Styles from "./Light.module.scss";
 
 interface ILight extends IDivMainProps {
-  title?: IRoomsName;
+  title?: string;
 }
 
 export const Light: React.FC<ILight> = ({

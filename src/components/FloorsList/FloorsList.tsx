@@ -1,14 +1,21 @@
 import React from "react";
-import { IHouseFloorSettings } from "../../interfaces";
-import { useFloors } from "../../hooks";
+import { IDivMainProps, IHouseFloorSettings } from "../../interfaces";
 import { Floor } from "../";
+import cx from "classnames";
 import Styles from "./FloorsList.module.scss";
 
-export const FloorsList: React.FC = () => {
-  const floors = useFloors();
+type IFloorsList = IDivMainProps & {
+  floors: IHouseFloorSettings[];
+  children?: never;
+};
 
+export const FloorsList: React.FC<IFloorsList> = ({
+  floors,
+  className,
+  ...props
+}: IFloorsList) => {
   return (
-    <div className={Styles.main}>
+    <div {...props} className={cx(Styles.main, className)}>
       <div className={Styles.list}>
         {floors.map((floor: IHouseFloorSettings) => (
           <Floor key={floor.id} {...floor} />
