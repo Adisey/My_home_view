@@ -1,7 +1,10 @@
 import React from "react";
 import CSS from "csstype";
-import { IDivMainProps } from "../../interfaces/div.main.props";
-import { IHouseFloorSettings, IRoomSettings } from "../../settings/myHouse";
+import {
+  IDivMainProps,
+  IHouseFloorSettings,
+  IRoomSettings,
+} from "../../interfaces";
 import { Room } from "../Room/Room";
 import cx from "classnames";
 import Styles from "./Floor.module.scss";
@@ -23,8 +26,8 @@ export const Floor: React.FC<IFloor> = ({
     gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
     gridTemplateRows: `repeat(${rowCount}, 1fr)`,
   };
-  const myRooms = rooms?.map((room: IRoomSettings, index: number) => (
-    <Room key={title + index.toString()} {...room} />
+  const myRooms = rooms?.map((room: IRoomSettings) => (
+    <Room key={room.id} {...room} />
   ));
 
   return (

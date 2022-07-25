@@ -21,7 +21,6 @@ export const Light: React.FC<ILight> = ({
   const lampClick = (): void => {
     !!title && (isLight ? lightOff(title) : lightOn(title));
   };
-  console.log(Date.now(), "--(RENDER Light)->", title, `-isL->`, isLight);
 
   return (
     <div {...props} className={cx(Styles.main, className)}>
@@ -30,6 +29,7 @@ export const Light: React.FC<ILight> = ({
           Styles.lampPlace,
           isLight ? Styles.shadowOn : Styles.shadowOff
         )}
+        title={isLight ? "lamp Off" : "lamp On"}
       >
         <Lamp className={Styles.lamp} onClick={lampClick} />
       </div>

@@ -1,10 +1,12 @@
 import React, { createContext, FC, ReactNode, useContext } from "react";
 import { lights$ } from "./light";
+import { floors$ } from "./floor";
 
-export * from "./light";
+export { lights$, floors$ };
 
 const StoreContext = createContext({
   lights$,
+  floors$,
 });
 
 export const useStore = () => useContext(StoreContext);
@@ -17,6 +19,7 @@ export const StoreProvider: FC<Props> = ({ children }: Props) => (
   <StoreContext.Provider
     value={{
       lights$,
+      floors$,
     }}
   >
     {children}
