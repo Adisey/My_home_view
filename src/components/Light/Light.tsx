@@ -1,10 +1,11 @@
 import React from "react";
-import { IDivMainProps } from "../../interfaces/div.main.props";
+import { IDivMainProps } from "../../interfaces/";
+import { IRoomsName } from "../../settings/myHouse";
+import { useIsLight } from "../../hooks";
+import { lightOff, lightOn } from "../../middleware";
 import Lamp from "./lamp.svg";
 import cx from "classnames";
 import Styles from "./Light.module.scss";
-import { IRoomsName } from "../../settings/myHouse";
-import { useLightsStore } from "../../hooks";
 
 interface ILight extends IDivMainProps {
   title?: IRoomsName;
@@ -15,11 +16,12 @@ export const Light: React.FC<ILight> = ({
   className,
   ...props
 }: ILight): JSX.Element => {
-  const { isLight, setLightRoom } = useLightsStore(title);
+  const isLight = useIsLight(title);
 
   const lampClick = (): void => {
-    setLightRoom(title, !isLight);
+    !!title && (isLight ? lightOff(title) : lightOn(title));
   };
+  console.log(Date.now(), "--(RENDER Light)->", title, `-isL->`, isLight);
 
   return (
     <div {...props} className={cx(Styles.main, className)}>

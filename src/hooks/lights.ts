@@ -1,22 +1,12 @@
-import { useState } from "react";
-import { IRoomsName } from "../settings/myHouse";
+import { useObservableState } from "observable-hooks";
+import { ILight } from "../interfaces";
+import { useStore } from "../store";
 
-type IIsRoomLighting = {
-  [id in IRoomsName]?: boolean;
+export const useLights = (): ILight[] => {
+  const { lights$ } = useStore();
+  return useObservableState<ILight[]>(lights$, []);
 };
 
-type IUseLightsStore = {
-  setLightRoom(room?: IRoomsName, isLight?: boolean): void;
-  isLight: boolean;
-};
-
-export const useLightsStore = (room?: IRoomsName): IUseLightsStore => {
-  const [lightsStore, setLightsStore] = useState<IIsRoomLighting>({});
-  const setLightRoom = (room?: IRoomsName, isLight?: boolean): void => {
-    if (room) {
-      setLightsStore({ ...lightsStore, [room]: !!isLight, hall: !!isLight });
-    }
-  };
-
-  return { setLightRoom, isLight: !!room && !!lightsStore[room] };
+export const useIsLight = (id?: ILight): boolean => {
+  return !!id && useLights().includes(id);
 };

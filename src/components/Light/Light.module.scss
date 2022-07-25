@@ -26,11 +26,14 @@
 
   .shadowOn {
     border-radius: 50%;
-    box-shadow: 0 -1px 20px 13px yellow, 0 -1px 20px 25px white,
-      inset 0 -1px 3px 3px yellow, inset 0 -1px 20px 9px white;
+    box-shadow:
+      0 -1px 20px 13px yellow,
+      0 -1px 20px 25px white,
+      inset 0 -1px 3px 3px yellow,
+      inset 0 -1px 20px 9px white;
 
     .lamp {
-      fill: #ffa000;
+      fill: #FFA000;
     }
   }
 }
