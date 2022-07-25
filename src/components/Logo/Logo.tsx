@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 // Other
-import { IDivMainProps } from "../../interfaces/div.main.props";
+import { IDivMainProps } from "../../interfaces";
 import logo from "../../../public/android-chrome-192x192.png";
 //Styles
 import cx from "classnames";

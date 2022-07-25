@@ -2,23 +2,25 @@ import React from "react";
 import { IDivMainProps } from "../../interfaces/";
 import { useIsLight } from "../../hooks";
 import { lightOff, lightOn } from "../../middleware";
-import Lamp from "./lamp.svg";
+import Image from "next/image";
+import lampRed from "./lampRed.png";
+import lampBlack from "./lampBlack.png";
 import cx from "classnames";
 import Styles from "./Light.module.scss";
 
 interface ILight extends IDivMainProps {
-  title?: string;
+  id?: string;
 }
 
 export const Light: React.FC<ILight> = ({
-  title,
+  id,
   className,
   ...props
 }: ILight): JSX.Element => {
-  const isLight = useIsLight(title);
+  const isLight = useIsLight(id);
 
   const lampClick = (): void => {
-    !!title && (isLight ? lightOff(title) : lightOn(title));
+    !!id && (isLight ? lightOff(id) : lightOn(id));
   };
 
   return (
@@ -30,7 +32,7 @@ export const Light: React.FC<ILight> = ({
         )}
         title={isLight ? "lamp Off" : "lamp On"}
       >
-        <Lamp className={Styles.lamp} onClick={lampClick} />
+        <Image src={isLight ? lampRed : lampBlack} onClick={lampClick} />
       </div>
     </div>
   );

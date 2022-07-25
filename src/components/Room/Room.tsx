@@ -8,6 +8,7 @@ import Styles from "./Room.module.scss";
 type IRoom = IDivMainProps & IRoomSettings;
 
 export const Room: React.FC<IRoom> = ({
+  id,
   startRow = 1,
   startCol = 1,
   endRow = 1,
@@ -31,6 +32,7 @@ export const Room: React.FC<IRoom> = ({
     paddingBottom: `${wallDown}px`,
     paddingLeft: `${wallLeft}px`,
   };
+
   return (
     <div
       {...props}
@@ -41,7 +43,7 @@ export const Room: React.FC<IRoom> = ({
         {title}
       </div>
       <div className={Styles.covering}>
-        <Light title={title} />
+        <Light id={id} />
         {children}
       </div>
     </div>
