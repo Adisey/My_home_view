@@ -11,7 +11,15 @@
         "startRow": 1,
         "startCol": 1,
         "endRow": 6,
-        "endCol": 7
+        "endCol": 7,
+        "windows": [
+          {
+            "id": "0-01-01",
+            "wallPlace": "up",
+            "margin": 20,
+            "width": 170
+          }
+        ]
       }
     ]
   },
@@ -38,7 +46,15 @@
         "startCol": 7,
         "endRow": 6,
         "endCol": 11,
-        "wallLeft": 15
+        "wallLeft": 15,
+        "windows": [
+          {
+            "id": "0-01-01",
+            "wallPlace": "up",
+            "margin": 70,
+            "width": 70
+          }
+        ]
       },
       {
         "id": "1-03",
@@ -48,7 +64,15 @@
         "startRow": 1,
         "startCol": 1,
         "endRow": 6,
-        "endCol": 7
+        "endCol": 7,
+        "windows": [
+          {
+            "id": "0-01-01",
+            "wallPlace": "up",
+            "margin": 20,
+            "width": 70
+          }
+        ]
       }
     ]
   },

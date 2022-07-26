@@ -24,15 +24,6 @@ export const Light: React.FC<ILight> = ({
     !!id && isLightActive && (isLight ? lightOff(id) : lightOn(id));
   };
 
-  console.log(
-    Date.now(),
-    `--(LAMP)-  ->`,
-    id,
-    "isActive ->",
-    isLightActive,
-    "isHide ->",
-    isLightHide
-  );
   return (
     <div {...props} className={cx(Styles.main, className)}>
       <div

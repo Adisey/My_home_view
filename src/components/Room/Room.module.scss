@@ -1,10 +1,11 @@
 .main {
   position: relative;
 
-  border: 1px dashed lightgrey;
+  //border: 1px dashed lightgrey;
 
   .title {
     position: absolute;
+    z-index: 3;
     top: 15px;
     right: 0;
     left: 0;
@@ -19,6 +20,8 @@
   }
 
   .covering {
+    position: relative;
+
     align-items: center;
     justify-content: center;
 
@@ -26,6 +29,8 @@
     height: 100%;
 
     text-align: center;
+
+    border: 2px solid black;
 
     background: #C3F6FC;
   }

@@ -1,5 +1,7 @@
 .main {
-  z-index: 1;
+  position: absolute;
+  z-index: 2;
+  top: 0;
 
   display: grid;
   align-items: center;

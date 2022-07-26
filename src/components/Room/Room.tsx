@@ -1,7 +1,7 @@
 import React from "react";
 import CSS from "csstype";
 import { IDivMainProps, IRoomSettings } from "../../interfaces";
-import { Light } from "../";
+import { Light, Windows } from "../";
 import cx from "classnames";
 import Styles from "./Room.module.scss";
 
@@ -18,6 +18,7 @@ export const Room: React.FC<IRoom> = ({
   wallDown = 5,
   wallLeft = 5,
   title,
+  windows,
   isLightActive,
   isLightHide,
   className,
@@ -34,7 +35,6 @@ export const Room: React.FC<IRoom> = ({
     paddingBottom: `${wallDown}px`,
     paddingLeft: `${wallLeft}px`,
   };
-
   return (
     <div
       {...props}
@@ -45,6 +45,10 @@ export const Room: React.FC<IRoom> = ({
         {title}
       </div>
       <div className={Styles.covering}>
+        <Windows
+          walls={{ wallUp, wallRight, wallDown, wallLeft }}
+          windows={windows}
+        />
         <Light
           id={id}
           isLightActive={isLightActive}
