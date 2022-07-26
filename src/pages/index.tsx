@@ -1,5 +1,5 @@
 import React from "react";
-import type { NextPage } from "next";
+import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
 import { IHouseFloorSettings } from "../interfaces";
 import { useFloors } from "../hooks";
@@ -26,7 +26,7 @@ const Home: NextPage<IHomeProps> = (props: IHomeProps) => {
 
 export default withLayout(Home);
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps<IHomeProps> = async () => {
   const floors = getFloors();
   return { props: { floors } };
 };

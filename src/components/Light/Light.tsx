@@ -1,28 +1,38 @@
 import React from "react";
-import { IDivMainProps } from "../../interfaces/";
+import { IDivMainProps, ILightStatus } from "../../interfaces/";
 import { useIsLight } from "../../hooks";
 import { lightOff, lightOn } from "../../middleware";
 import Image from "next/image";
 import lampRed from "./lampRed.png";
 import lampBlack from "./lampBlack.png";
+import lampGray from "./lampGray.png";
 import cx from "classnames";
 import Styles from "./Light.module.scss";
 
-interface ILight extends IDivMainProps {
-  id?: string;
-}
+type ILight = IDivMainProps & ILightStatus;
 
 export const Light: React.FC<ILight> = ({
   id,
+  isLightActive,
+  isLightHide,
   className,
   ...props
 }: ILight): JSX.Element => {
   const isLight = useIsLight(id);
 
   const lampClick = (): void => {
-    !!id && (isLight ? lightOff(id) : lightOn(id));
+    !!id && isLightActive && (isLight ? lightOff(id) : lightOn(id));
   };
 
+  console.log(
+    Date.now(),
+    `--(LAMP)-  ->`,
+    id,
+    "isActive ->",
+    isLightActive,
+    "isHide ->",
+    isLightHide
+  );
   return (
     <div {...props} className={cx(Styles.main, className)}>
       <div
@@ -32,7 +42,13 @@ export const Light: React.FC<ILight> = ({
         )}
         title={isLight ? "lamp Off" : "lamp On"}
       >
-        <Image src={isLight ? lampRed : lampBlack} onClick={lampClick} />
+        {isLightHide ? null : (
+          <Image
+            src={isLightActive ? (isLight ? lampRed : lampBlack) : lampGray}
+            onClick={lampClick}
+            priority
+          />
+        )}
       </div>
     </div>
   );

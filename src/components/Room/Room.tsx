@@ -18,6 +18,8 @@ export const Room: React.FC<IRoom> = ({
   wallDown = 5,
   wallLeft = 5,
   title,
+  isLightActive,
+  isLightHide,
   className,
   children,
   ...props
@@ -43,7 +45,11 @@ export const Room: React.FC<IRoom> = ({
         {title}
       </div>
       <div className={Styles.covering}>
-        <Light id={id} />
+        <Light
+          id={id}
+          isLightActive={isLightActive}
+          isLightHide={isLightHide}
+        />
         {children}
       </div>
     </div>

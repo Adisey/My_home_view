@@ -1,4 +1,6 @@
-export type IRoomSettings = {
+import { ILightStatus } from "./light";
+
+export type IRoomSettings = ILightStatus & {
   id: string;
   startRow?: number;
   startCol?: number;
