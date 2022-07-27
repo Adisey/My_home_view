@@ -1,23 +1,25 @@
 [
   {
+    "_comment": "all number is cm.",
     "id": "0",
     "title": "Ground floor",
-    "rowCount": 10,
-    "columnCount": 10,
+    "width": 1000,
+    "length": 1000,
+    "mainWall": 30,
     "rooms": [
       {
         "id": "0-01",
         "title": "boiler room",
-        "startRow": 1,
-        "startCol": 1,
-        "endRow": 6,
-        "endCol": 7,
+        "startX": 0,
+        "startY": 0,
+        "lengthX": 800,
+        "lengthY": 500,
         "windows": [
           {
             "id": "0-01-01",
             "wallPlace": "up",
-            "margin": 20,
-            "width": 170
+            "margin": 50,
+            "width": 300
           }
         ]
       }
@@ -26,79 +28,97 @@
   {
     "id": "1",
     "title": "First floor",
-    "rowCount": 10,
-    "columnCount": 10,
+    "width": 1000,
+    "length": 1000,
+    "mainWall": 20,
     "rooms": [
       {
         "id": "1-01",
-        "title": "hall",
-        "isLightActive": true,
-        "startRow": 6,
-        "startCol": 1,
-        "endRow": 11,
-        "endCol": 11
-      },
-      {
-        "id": "1-02",
         "title": "kitchen",
         "isLightHide": true,
-        "startRow": 1,
-        "startCol": 7,
-        "endRow": 6,
-        "endCol": 11,
-        "wallLeft": 15,
+        "startX": 0,
+        "startY": 0,
+        "lengthX": 300,
+        "lengthY": 600,
+        "wallRight": 30,
         "windows": [
           {
             "id": "0-01-01",
             "wallPlace": "up",
-            "margin": 70,
-            "width": 70
+            "margin": 50,
+            "width": 100
+          }
+        ]
+      },
+      {
+        "id": "1-02",
+        "title": "living room",
+        "isLightHide": true,
+        "isLightActive": true,
+        "startX": 300,
+        "startY": 0,
+        "lengthX": 700,
+        "lengthY": 600,
+        "windows": [
+          {
+            "id": "0-01-01",
+            "wallPlace": "up",
+            "margin": 500,
+            "width": 100
           }
         ]
       },
       {
         "id": "1-03",
-        "title": "living room",
-        "isLightHide": true,
+        "title": "hall",
         "isLightActive": true,
-        "startRow": 1,
-        "startCol": 1,
-        "endRow": 6,
-        "endCol": 7,
-        "windows": [
-          {
-            "id": "0-01-01",
-            "wallPlace": "up",
-            "margin": 20,
-            "width": 70
-          }
-        ]
+        "startX": 0,
+        "startY": 600,
+        "lengthX": 1000,
+        "lengthY": 400
       }
     ]
   },
   {
     "id": "2",
     "title": "Second floor",
-    "rowCount": 10,
-    "columnCount": 10,
+    "width": 1000,
+    "length": 1000,
+    "mainWall": 15,
     "rooms": [
       {
         "id": "2-01",
         "title": "bedroom 1",
         "isLightActive": true,
-        "startRow": 1,
-        "startCol": 1,
-        "endRow": 6,
-        "endCol": 5
+        "startX": 0,
+        "startY": 0,
+        "lengthX": 400,
+        "lengthY": 500,
+        "windows": [
+          {
+            "id": "0-01-01",
+            "wallPlace": "up",
+            "margin": 100,
+            "width": 200
+          }
+        ]
       },
       {
         "id": "2-02",
         "title": "bedroom 2",
         "isLightActive": true,
-        "startRow": 1,
-        "startCol": 7,
-        "endRow": 6,
-        "endCol": 11
+        "startX": 600,
+        "startY": 0,
+        "lengthX": 400,
+        "lengthY": 500,
+        "windows": [
+          {
+            "id": "0-01-01",
+            "wallPlace": "up",
+            "margin": 100,
+            "width": 200
+          }
+        ]
       }
     ]
   }

@@ -4,19 +4,22 @@ import {
   IDivMainProps,
   IHouseFloorSettings,
   IRoomSettings,
-  IWidthWalls,
   IWindow,
 } from "../../interfaces";
+import { defaultWindow } from "../../settings/appConfig";
+import { asNumber } from "../../instrument";
 import cx from "classnames";
 import Styles from "./Window.module.scss";
 
 type IWindowProps = IDivMainProps & {
-  walls?: IWidthWalls;
+  floor: IHouseFloorSettings;
+  room: IRoomSettings;
   window?: IWindow;
 };
 
 const Window: React.FC<IWindowProps> = ({
-  walls,
+  floor,
+  room,
   window,
   className,
   children,
@@ -25,14 +28,14 @@ const Window: React.FC<IWindowProps> = ({
   const positionStyles: CSS.Properties = {
     left: `${window?.margin || 0}px`,
     width: `${window?.width || 0}px`,
-    height: `${15 + (walls?.wallUp || 0) + 2}px`,
-    top: `${-(15 + (walls?.wallUp || 0) + 3)}px`,
+    height: `${asNumber(floor.mainWall) + asNumber(room?.wallUp)}px`,
+    top: `${-(asNumber(floor.mainWall) + asNumber(room?.wallUp))}px`,
   };
 
   return (
     <div
       {...props}
-      className={cx(Styles.window, className)}
+      className={cx(Styles.window, Styles.windowHorizontal, className)}
       style={positionStyles}
     >
       <div className={Styles.glass} />
@@ -41,19 +44,26 @@ const Window: React.FC<IWindowProps> = ({
 };
 
 type IWindowsProps = IDivMainProps & {
-  walls?: IWidthWalls;
+  floor: IHouseFloorSettings;
+  room: IRoomSettings;
   windows?: IWindow[];
 };
 
 export const Windows: React.FC<IWindowsProps> = ({
-  walls,
+  floor,
+  room,
   windows,
   className,
   children,
   ...props
 }: IWindowsProps): JSX.Element => {
   const myWindows = windows?.map((window: IWindow) => (
-    <Window key={window.id} walls={walls} window={window} />
+    <Window
+      key={window.id}
+      floor={floor}
+      room={room}
+      window={{ ...defaultWindow, ...window }}
+    />
   ));
 
   return (

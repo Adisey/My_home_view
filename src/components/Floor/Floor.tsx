@@ -5,29 +5,32 @@ import {
   IHouseFloorSettings,
   IRoomSettings,
 } from "../../interfaces";
+import { appConfig, defaultRoom } from "../../settings/appConfig";
+import { asNumber } from "../../instrument";
 import { Room } from "../Room/Room";
 import cx from "classnames";
 import Styles from "./Floor.module.scss";
 
-type IFloor = IDivMainProps & IHouseFloorSettings;
+type IFloor = IDivMainProps & {
+  floor: IHouseFloorSettings;
+};
 
 export const Floor: React.FC<IFloor> = ({
-  columnCount = 10,
-  rowCount = 10,
-  title,
-  rooms,
+  floor,
   className,
   children,
   ...props
 }: IFloor): JSX.Element => {
+  const { title, length, width, mainWall, rooms } = floor;
   const gridStyles: CSS.Properties = {
-    height: `${columnCount * 50}px`,
-    width: `${rowCount * 50}px`,
-    gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
-    gridTemplateRows: `repeat(${rowCount}, 1fr)`,
+    height: `${length}px`,
+    width: `${width}px`,
+    gridTemplateColumns: `repeat(${length}, 1fr)`,
+    gridTemplateRows: `repeat(${width}, 1fr)`,
+    padding: `${asNumber(mainWall) - appConfig.internalWall / 2}px`,
   };
   const myRooms = rooms?.map((room: IRoomSettings) => (
-    <Room key={room.id} {...room} />
+    <Room key={room.id} room={{ ...defaultRoom, ...room }} floor={floor} />
   ));
 
   return (

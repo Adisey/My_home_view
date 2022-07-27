@@ -19,18 +19,19 @@ export type IWindow = {
 export type IRoomSettings = ILightStatus &
   IWidthWalls & {
     id: string;
-    startRow?: number;
-    startCol?: number;
-    endRow?: number;
-    endCol?: number;
+    startX?: number;
+    startY?: number;
+    lengthX?: number;
+    lengthY?: number;
     title?: string;
     windows?: IWindow[];
   };
 export type IFloorSettings = {
   id: string;
-  columnCount?: number;
-  rowCount?: number;
   title?: string;
+  length?: number;
+  width?: number;
+  mainWall?: number;
 };
 
 export type IHouseFloorSettings = IFloorSettings & {

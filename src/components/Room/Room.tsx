@@ -1,39 +1,55 @@
 import React from "react";
 import CSS from "csstype";
-import { IDivMainProps, IRoomSettings } from "../../interfaces";
+import {
+  IDivMainProps,
+  IHouseFloorSettings,
+  IRoomSettings,
+} from "../../interfaces";
 import { Light, Windows } from "../";
 import cx from "classnames";
 import Styles from "./Room.module.scss";
+import { asNumber } from "../../instrument";
 
-type IRoom = IDivMainProps & IRoomSettings;
+type IRoomProps = IDivMainProps & {
+  floor: IHouseFloorSettings;
+  room: IRoomSettings;
+};
 
-export const Room: React.FC<IRoom> = ({
-  id,
-  startRow = 1,
-  startCol = 1,
-  endRow = 1,
-  endCol = 1,
-  wallUp = 5,
-  wallRight = 5,
-  wallDown = 5,
-  wallLeft = 5,
-  title,
-  windows,
-  isLightActive,
-  isLightHide,
+export const Room: React.FC<IRoomProps> = ({
+  floor,
+  room,
   className,
   children,
   ...props
-}: IRoom): JSX.Element => {
+}: IRoomProps): JSX.Element => {
+  const {
+    id,
+    startX,
+    startY,
+    lengthX,
+    lengthY,
+    wallUp,
+    wallRight,
+    wallDown,
+    wallLeft,
+    title,
+    windows,
+    isLightActive,
+    isLightHide,
+  } = room;
+  const numberStartX = asNumber(startX);
+  const numberStartY = asNumber(startY);
+  const numberLengthX = asNumber(lengthX);
+  const numberLengthY = asNumber(lengthY);
   const positionStyles: CSS.Properties = {
-    gridRowStart: startRow,
-    gridColumnStart: startCol,
-    gridRowEnd: endRow,
-    gridColumnEnd: endCol,
-    paddingTop: `${wallUp}px`,
-    paddingRight: `${wallRight}px`,
-    paddingBottom: `${wallDown}px`,
-    paddingLeft: `${wallLeft}px`,
+    gridRowStart: numberStartY + 1,
+    gridColumnStart: numberStartX + 1,
+    gridRowEnd: numberStartY + numberLengthY,
+    gridColumnEnd: numberStartX + numberLengthX,
+    paddingTop: `${asNumber(wallUp)}px`,
+    paddingRight: `${asNumber(wallRight)}px`,
+    paddingBottom: `${asNumber(wallDown)}px`,
+    paddingLeft: `${asNumber(wallLeft)}px`,
   };
   return (
     <div
@@ -45,10 +61,7 @@ export const Room: React.FC<IRoom> = ({
         {title}
       </div>
       <div className={Styles.covering}>
-        <Windows
-          walls={{ wallUp, wallRight, wallDown, wallLeft }}
-          windows={windows}
-        />
+        <Windows floor={floor} room={room} windows={windows} />
         <Light
           id={id}
           isLightActive={isLightActive}
