@@ -1,4 +1,9 @@
-import { IFloorSettings, IRoomSettings, IWindow } from "../interfaces";
+import {
+  IDoorSettings,
+  IFloorSettings,
+  IRoomSettings,
+  IWindowSettings,
+} from "../interfaces";
 
 export const appConfig = {
   extendWall: 20,
@@ -27,9 +32,17 @@ export const defaultRoom: IRoomSettings = {
   wallLeft: appConfig.internalWall / 2,
 };
 
-export const defaultWindow: IWindow = {
+export const defaultWindow: IWindowSettings = {
   id: "window",
   wallPlace: "up",
   margin: 20,
   width: 50,
+};
+
+export const defaultDoor: IDoorSettings = {
+  id: "door",
+  wallPlace: "up",
+  margin: 20,
+  width: 50,
+  direction: "left",
 };

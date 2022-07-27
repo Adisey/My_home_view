@@ -1,3 +1,4 @@
+export * from "./Door/Doors";
 export * from "./Favicon/Favicon";
 export * from "./Floor/Floor";
 export * from "./FloorsList/FloorsList";

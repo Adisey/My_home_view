@@ -1,6 +1,7 @@
 import { ILightStatus } from "./light";
 
 type IRoomPlace = "up" | "down" | "left" | "right";
+type IDoorDirection = "left" | "right";
 
 export type IWidthWalls = {
   wallUp?: number;
@@ -9,11 +10,16 @@ export type IWidthWalls = {
   wallLeft?: number;
 };
 
-export type IWindow = {
+export type IWindowSettings = {
   id: string;
   wallPlace: IRoomPlace;
   margin?: number;
   width: number;
+};
+
+export type IDoorSettings = IWindowSettings & {
+  internalDepth?: number;
+  direction?: IDoorDirection;
 };
 
 export type IRoomSettings = ILightStatus &
@@ -24,7 +30,8 @@ export type IRoomSettings = ILightStatus &
     lengthX?: number;
     lengthY?: number;
     title?: string;
-    windows?: IWindow[];
+    windows?: IWindowSettings[];
+    doors?: IDoorSettings[];
   };
 export type IFloorSettings = {
   id: string;

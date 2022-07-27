@@ -4,7 +4,7 @@ import {
   IDivMainProps,
   IHouseFloorSettings,
   IRoomSettings,
-  IWindow,
+  IWindowSettings,
 } from "../../interfaces";
 import { defaultWindow } from "../../settings/appConfig";
 import { asNumber } from "../../instrument";
@@ -14,7 +14,7 @@ import Styles from "./Window.module.scss";
 type IWindowProps = IDivMainProps & {
   floor: IHouseFloorSettings;
   room: IRoomSettings;
-  window?: IWindow;
+  window?: IWindowSettings;
 };
 
 const Window: React.FC<IWindowProps> = ({
@@ -88,18 +88,17 @@ const Window: React.FC<IWindowProps> = ({
 type IWindowsProps = IDivMainProps & {
   floor: IHouseFloorSettings;
   room: IRoomSettings;
-  windows?: IWindow[];
+  windows?: IWindowSettings[];
 };
 
 export const Windows: React.FC<IWindowsProps> = ({
   floor,
   room,
-  windows,
   className,
   children,
   ...props
 }: IWindowsProps): JSX.Element => {
-  const myWindows = windows?.map((window: IWindow) => (
+  const myWindows = room?.windows?.map((window: IWindowSettings) => (
     <Window
       key={window.id}
       floor={floor}
