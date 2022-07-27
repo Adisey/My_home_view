@@ -22,6 +22,28 @@
             "width": 300
           }
         ]
+      },
+      {
+        "id": "0-02",
+        "title": "sauna",
+        "startX": 0,
+        "startY": 500,
+        "lengthX": 500,
+        "lengthY": 500,
+        "windows": [
+          {
+            "id": "0-02-01",
+            "wallPlace": "down",
+            "margin": 150,
+            "width": 150
+          },
+          {
+            "id": "0-02-01",
+            "wallPlace": "left",
+            "margin": 150,
+            "width": 150
+          }
+        ]
       }
     ]
   },
@@ -43,7 +65,7 @@
         "wallRight": 30,
         "windows": [
           {
-            "id": "0-01-01",
+            "id": "1-01-01",
             "wallPlace": "up",
             "margin": 50,
             "width": 100
@@ -61,7 +83,7 @@
         "lengthY": 600,
         "windows": [
           {
-            "id": "0-01-01",
+            "id": "1-02-01",
             "wallPlace": "up",
             "margin": 500,
             "width": 100
@@ -75,7 +97,33 @@
         "startX": 0,
         "startY": 600,
         "lengthX": 1000,
-        "lengthY": 400
+        "lengthY": 400,
+        "windows": [
+          {
+            "id": "1-03-01",
+            "wallPlace": "down",
+            "margin": 50,
+            "width": 300
+          },
+          {
+            "id": "1-03-03",
+            "wallPlace": "down",
+            "margin": 600,
+            "width": 300
+          },
+          {
+            "id": "1-03-04",
+            "wallPlace": "left",
+            "margin": 50,
+            "width": 300
+          },
+          {
+            "id": "1-03-05",
+            "wallPlace": "right",
+            "margin": 50,
+            "width": 300
+          }
+        ]
       }
     ]
   },
@@ -96,7 +144,7 @@
         "lengthY": 500,
         "windows": [
           {
-            "id": "0-01-01",
+            "id": "2-01-01",
             "wallPlace": "up",
             "margin": 100,
             "width": 200
@@ -113,7 +161,7 @@
         "lengthY": 500,
         "windows": [
           {
-            "id": "0-01-01",
+            "id": "2-02-01",
             "wallPlace": "up",
             "margin": 100,
             "width": 200

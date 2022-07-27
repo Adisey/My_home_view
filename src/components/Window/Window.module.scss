@@ -17,28 +17,47 @@
   }
 
   .windowHorizontal {
-    border-top: 1px solid white;
-    border-right: 1px solid black;
-    border-bottom: 1px solid white;
-    border-left: 1px solid black;
+    border-top: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid white;
+    border-left: 2px solid black;
 
-    .glass {
+    .glass1 {
       height: 50%;
 
-      border-bottom: 1px solid black;
+      border-top: 1px solid blue;
+      border-bottom: 1px solid blue;
+    }
+
+    .glass2 {
+      height: 50%;
+
+      border-bottom: 1px solid blue;
     }
   }
 
   .windowVertical {
-    border-top: 1px solid black;
-    border-right: 1px solid white;
-    border-bottom: 1px solid black;
-    border-left: 1px solid white;
+    display: flex;
 
-    .glass {
+    border-top: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid black;
+    border-left: 2px solid white;
+
+    .glass1 {
       width: 50%;
+      height: 100%;
 
-      border-left: 1px solid black;
+      border-right: 1px solid blue;
+
+      border-left: 1px solid blue;
+    }
+
+    .glass2 {
+      width: 50%;
+      height: 100%;
+
+      border-right: 1px solid blue;
     }
   }
 }

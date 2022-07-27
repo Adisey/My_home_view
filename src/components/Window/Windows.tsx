@@ -25,20 +25,62 @@ const Window: React.FC<IWindowProps> = ({
   children,
   ...props
 }: IWindowProps): JSX.Element => {
-  const positionStyles: CSS.Properties = {
-    left: `${window?.margin || 0}px`,
-    width: `${window?.width || 0}px`,
-    height: `${asNumber(floor.mainWall) + asNumber(room?.wallUp)}px`,
-    top: `${-(asNumber(floor.mainWall) + asNumber(room?.wallUp))}px`,
+  const positionStyles = (): CSS.Properties => {
+    switch (window?.wallPlace) {
+      case "right":
+        return {
+          right: `${
+            (asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1) * -1
+          }px`,
+          width: `${asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1}px`,
+          height: `${asNumber(window?.width)}px`,
+          top: `${asNumber(window?.margin)}px`,
+        };
+      case "down":
+        return {
+          left: `${asNumber(window?.margin)}px`,
+          width: `${asNumber(window?.width)}px`,
+          height: `${asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1}px`,
+          bottom: `${
+            (asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1) * -1
+          }px`,
+        };
+      case "left":
+        return {
+          left: `${
+            (asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1) * -1
+          }px`,
+          width: `${asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1}px`,
+          height: `${asNumber(window?.width)}px`,
+          top: `${asNumber(window?.margin)}px`,
+        };
+      default:
+        return {
+          left: `${asNumber(window?.margin)}px`,
+          width: `${asNumber(window?.width)}px`,
+          height: `${asNumber(floor.mainWall) + asNumber(room?.wallUp)}px`,
+          top: `${(asNumber(floor.mainWall) + asNumber(room?.wallUp)) * -1}px`,
+        };
+    }
   };
 
   return (
     <div
       {...props}
-      className={cx(Styles.window, Styles.windowHorizontal, className)}
-      style={positionStyles}
+      className={cx(
+        Styles.window,
+        {
+          [Styles.windowHorizontal]:
+            window?.wallPlace === "down" || window?.wallPlace === "up",
+          [Styles.windowVertical]:
+            window?.wallPlace === "left" || window?.wallPlace === "right",
+        },
+        className
+      )}
+      style={positionStyles()}
     >
-      <div className={Styles.glass} />
+      <div className={Styles.glass1} />
+      <div className={Styles.glass2} />
     </div>
   );
 };
