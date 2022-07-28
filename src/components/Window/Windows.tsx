@@ -40,7 +40,7 @@ const Window: React.FC<IWindowProps> = ({
         : 0;
     const depth =
       window?.internalDepth !== undefined
-        ? asNumber(window?.internalDepth) + 1
+        ? asNumber(window?.internalDepth) + 4
         : asNumber(floor.mainWall) + widthRoomWall;
 
     switch (window?.wallPlace) {

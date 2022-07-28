@@ -14,9 +14,15 @@
     background-color: white;
 
     .doorsCanvas {
+      position: absolute;
+
       margin: 0;
 
       background-color: white;
+
+      div {
+        font-size: 5px;
+      }
     }
   }
 
@@ -27,15 +33,9 @@
     border-left: 2px solid black;
 
     .doorsCanvas {
-      position: absolute;
-
       height: 100%;
 
       border: 2px solid black;
-
-      div {
-        font-size: 5px;
-      }
     }
   }
 
@@ -48,26 +48,7 @@
     border-left: 2px solid white;
 
     .doorsCanvas {
-      width: 50%;
-      height: 100%;
-
-      border-left: 1px solid red;
-    }
-
-    .glass1 {
-      width: 50%;
-      height: 100%;
-
-      border-right: 1px solid blue;
-
-      border-left: 1px solid blue;
-    }
-
-    .glass2 {
-      width: 50%;
-      height: 100%;
-
-      border-right: 1px solid blue;
+      border: 2px solid black;
     }
   }
 }

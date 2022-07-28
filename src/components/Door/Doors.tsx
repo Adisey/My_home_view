@@ -25,94 +25,179 @@ const Door: React.FC<IWindowProps> = ({
   children,
   ...props
 }: IWindowProps): JSX.Element => {
-  const depthDoor =
+  const margin = asNumber(door?.margin);
+  const width = asNumber(door?.width);
+  const widthRoomWall =
+    door?.wallPlace === "up"
+      ? asNumber(room?.wallUp)
+      : door?.wallPlace === "down"
+      ? asNumber(room?.wallDown)
+      : door?.wallPlace === "left"
+      ? asNumber(room?.wallLeft)
+      : door?.wallPlace === "right"
+      ? asNumber(room?.wallRight)
+      : 0;
+  const depth =
     door?.internalDepth !== undefined
       ? asNumber(door?.internalDepth) + 5
-      : asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1;
-
-  const widthDoor = asNumber(door?.width);
+      : asNumber(floor.mainWall) + widthRoomWall + 1;
+  const lineWhite = "2px solid white";
+  const radius = {
+    UL: "100% 0 0 0",
+    UR: "0 100% 0  0",
+    DR: "0 0 100% 0",
+    DL: "0 0 0 100%",
+  };
 
   const positionStyles = (): CSS.Properties => {
     switch (door?.wallPlace) {
       case "up":
         return {
-          left: `${asNumber(door?.margin)}px`,
-          width: `${widthDoor}px`,
-          height: `${depthDoor}px`,
-          top: `${depthDoor * -1}px`,
+          left: `${margin}px`,
+          width: `${width}px`,
+          height: `${depth}px`,
+          top: `${depth * -1}px`,
         };
       case "right":
         return {
-          right: `${
-            (asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1) * -1
-          }px`,
-          width: `${asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1}px`,
-          height: `${widthDoor}px`,
-          top: `${asNumber(door?.margin)}px`,
+          right: `${depth * -1}px`,
+          width: `${depth}px`,
+          height: `${width}px`,
+          top: `${margin}px`,
         };
       case "left":
         return {
-          left: `${
-            (asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1) * -1
-          }px`,
-          width: `${asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1}px`,
-          height: `${widthDoor}px`,
-          top: `${asNumber(door?.margin)}px`,
+          left: `${depth * -1}px`,
+          width: `${depth}px`,
+          height: `${width}px`,
+          top: `${margin}px`,
         };
       default:
         return {
-          left: `${asNumber(door?.margin)}px`,
-          width: `${widthDoor}px`,
-          height: `${depthDoor - 1}px`,
-          bottom: `${(depthDoor - 1) * -1}px`,
+          left: `${margin}px`,
+          width: `${width}px`,
+          height: `${depth}px`,
+          bottom: `${depth * -1}px`,
         };
     }
   };
   const canvasStyles = (): CSS.Properties => {
+    const downStyle: CSS.Properties = {
+      height: `${width}px`,
+      width: `${width}px`,
+    };
+
     switch (door?.wallPlace) {
-      case "right":
-        return {};
       case "up":
-      case "down":
-        const downStyle: CSS.Properties = {
-          height: `${asNumber(door.width)}px`,
-          width: `${asNumber(door.width)}px`,
-        };
+        downStyle.left = "-2px";
         switch (door?.direction) {
           case "rightPull":
-            downStyle.top = "-1px";
-            downStyle.right = "-1px";
-            downStyle.borderTop = "2px solid white";
-            downStyle.borderRadius = "0 0 0 100%";
+            downStyle.top = "50%";
+            downStyle.borderTop = lineWhite;
+            downStyle.borderRadius = radius.DL;
             return downStyle;
           case "rightPush":
-            downStyle.bottom = "-1px";
-            downStyle.right = "-1px";
-            downStyle.borderBottom = "2px solid white";
-            downStyle.borderRadius = "0 100% 0 0";
+            downStyle.bottom = "50%";
+            downStyle.borderBottom = lineWhite;
+            downStyle.borderRadius = radius.UL;
             return downStyle;
           case "leftPush":
-            downStyle.bottom = "-1px";
-            downStyle.left = "-1px";
-            downStyle.borderBottom = "2px solid white";
-            downStyle.borderRadius = "100% 0 0 0";
+            downStyle.bottom = "50%";
+            downStyle.borderBottom = lineWhite;
+            downStyle.borderRadius = radius.UR;
             return downStyle;
           case "leftPull":
-            downStyle.top = "-1px";
-            downStyle.left = "-1px";
-            downStyle.borderTop = "2px solid white";
-            downStyle.borderRadius = "0 0 100% 0";
+            downStyle.top = "50%";
+            downStyle.borderTop = lineWhite;
+            downStyle.borderRadius = radius.DR;
             return downStyle;
           default:
-            downStyle.height = `${depthDoor}px`;
-            downStyle.border = "2px solid #c3f6fc";
-            downStyle.top = "-2px";
-            downStyle.width = `${widthDoor - 4}px`;
-            downStyle.backgroundColor = "#c3f6fc";
+            downStyle.display = "none";
+            return downStyle;
+        }
+      case "down":
+        downStyle.left = "-2px";
+        switch (door?.direction) {
+          case "rightPull":
+            downStyle.bottom = "50%";
+            downStyle.borderBottom = lineWhite;
+            downStyle.borderRadius = radius.UR;
+            return downStyle;
+          case "rightPush":
+            downStyle.top = "50%";
+            downStyle.borderTop = lineWhite;
+            downStyle.borderRadius = radius.DR;
+            return downStyle;
+          case "leftPush":
+            downStyle.top = "50%";
+            downStyle.borderTop = lineWhite;
+            downStyle.borderRadius = radius.DL;
+            return downStyle;
+          case "leftPull":
+            downStyle.bottom = "50%";
+            downStyle.borderBottom = lineWhite;
+            downStyle.borderRadius = radius.UL;
+
+            return downStyle;
+          default:
+            downStyle.display = "none";
+            return downStyle;
+        }
+      case "right":
+        downStyle.top = "-2px";
+        switch (door?.direction) {
+          case "rightPush":
+            downStyle.left = "50%";
+            downStyle.borderLeft = lineWhite;
+            downStyle.borderRadius = radius.UR;
+            return downStyle;
+          case "rightPull":
+            downStyle.right = "50%";
+            downStyle.borderRight = lineWhite;
+            downStyle.borderRadius = radius.UL;
+            return downStyle;
+          case "leftPush":
+            downStyle.left = "50%";
+            downStyle.borderLeft = lineWhite;
+            downStyle.borderRadius = radius.DR;
+            return downStyle;
+          case "leftPull":
+            downStyle.right = "50%";
+            downStyle.borderRight = lineWhite;
+            downStyle.borderRadius = radius.DL;
+            return downStyle;
+          default:
+            downStyle.display = "none";
             return downStyle;
         }
       case "left":
-        return {};
+        downStyle.top = "-2px";
+        switch (door?.direction) {
+          case "rightPush":
+            downStyle.right = "50%";
+            downStyle.borderRight = lineWhite;
+            downStyle.borderRadius = radius.UL;
+            return downStyle;
+          case "rightPull":
+            downStyle.left = "50%";
+            downStyle.borderLeft = lineWhite;
+            downStyle.borderRadius = radius.UR;
+            return downStyle;
+          case "leftPush":
+            downStyle.right = "50%";
+            downStyle.borderRight = lineWhite;
+            downStyle.borderRadius = radius.DL;
+            return downStyle;
+          case "leftPull":
+            downStyle.left = "50%";
+            downStyle.borderLeft = lineWhite;
+            downStyle.borderRadius = radius.DR;
+            return downStyle;
+          default:
+            downStyle.display = "none";
+            return downStyle;
+        }
+
       default:
         return {};
     }
