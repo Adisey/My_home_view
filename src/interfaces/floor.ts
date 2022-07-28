@@ -12,13 +12,13 @@ export type IWidthWalls = {
 
 export type IWindowSettings = {
   id: string;
-  wallPlace: IRoomPlace;
+  internalDepth?: number;
   margin?: number;
+  wallPlace: IRoomPlace;
   width: number;
 };
 
 export type IDoorSettings = IWindowSettings & {
-  internalDepth?: number;
   direction?: IDoorDirection;
 };
 

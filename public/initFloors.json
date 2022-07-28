@@ -84,6 +84,13 @@
         "windows": [
           {
             "id": "1-02-01",
+            "wallPlace": "left",
+            "margin": 50,
+            "width": 100,
+            "internalDepth": 40
+          },
+          {
+            "id": "1-02-02",
             "wallPlace": "up",
             "margin": 500,
             "width": 100

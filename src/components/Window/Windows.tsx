@@ -26,40 +26,51 @@ const Window: React.FC<IWindowProps> = ({
   ...props
 }: IWindowProps): JSX.Element => {
   const positionStyles = (): CSS.Properties => {
+    const margin = asNumber(window?.margin);
+    const width = asNumber(window?.width);
+    const widthRoomWall =
+      window?.wallPlace === "up"
+        ? asNumber(room?.wallUp)
+        : window?.wallPlace === "down"
+        ? asNumber(room?.wallDown)
+        : window?.wallPlace === "left"
+        ? asNumber(room?.wallLeft)
+        : window?.wallPlace === "right"
+        ? asNumber(room?.wallRight)
+        : 0;
+    const depth =
+      window?.internalDepth !== undefined
+        ? asNumber(window?.internalDepth) + 1
+        : asNumber(floor.mainWall) + widthRoomWall;
+
     switch (window?.wallPlace) {
       case "right":
         return {
-          right: `${
-            (asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1) * -1
-          }px`,
-          width: `${asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1}px`,
-          height: `${asNumber(window?.width)}px`,
-          top: `${asNumber(window?.margin)}px`,
+          right: `${depth * -1}px`,
+          width: `${depth}px`,
+          height: `${width}px`,
+          top: `${margin}px`,
         };
       case "down":
         return {
-          left: `${asNumber(window?.margin)}px`,
-          width: `${asNumber(window?.width)}px`,
-          height: `${asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1}px`,
-          bottom: `${
-            (asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1) * -1
-          }px`,
+          left: `${margin}px`,
+          width: `${width}px`,
+          height: `${depth}px`,
+          bottom: `${depth * -1}px`,
         };
       case "left":
         return {
-          left: `${
-            (asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1) * -1
-          }px`,
-          width: `${asNumber(floor.mainWall) + asNumber(room?.wallUp) + 1}px`,
-          height: `${asNumber(window?.width)}px`,
-          top: `${asNumber(window?.margin)}px`,
+          left: `${(depth - 1) * -1}px`,
+          width: `${depth - 1}px`,
+          height: `${width}px`,
+          top: `${margin}px`,
         };
       default:
         return {
-          left: `${asNumber(window?.margin)}px`,
-          width: `${asNumber(window?.width)}px`,
-          height: `${asNumber(floor.mainWall) + asNumber(room?.wallUp)}px`,
-          top: `${(asNumber(floor.mainWall) + asNumber(room?.wallUp)) * -1}px`,
+          left: `${margin}px`,
+          width: `${width}px`,
+          height: `${depth}px`,
+          top: `${(depth - 1) * -1}px`,
         };
     }
   };
