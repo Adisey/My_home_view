@@ -33,8 +33,6 @@ export const Room: React.FC<IRoomProps> = ({
     wallDown,
     wallLeft,
     title,
-    windows,
-    doors,
     isLightActive,
     isLightHide,
   } = room;
@@ -59,7 +57,8 @@ export const Room: React.FC<IRoomProps> = ({
       style={positionStyles}
     >
       <div title={title} className={Styles.title}>
-        {title}
+        {title} ({(asNumber(lengthX) * asNumber(lengthY)) / 10000} m<sup>2</sup>
+        )
       </div>
       <div className={Styles.covering}>
         <Doors floor={floor} room={room} />

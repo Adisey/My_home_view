@@ -1,7 +1,7 @@
 import { ILightStatus } from "./light";
 
 type IRoomPlace = "up" | "down" | "left" | "right";
-type IDoorDirection = "left" | "right";
+type IDoorDirection = "leftPush" | "rightPush" | "leftPull" | "rightPull";
 
 export type IWidthWalls = {
   wallUp?: number;
