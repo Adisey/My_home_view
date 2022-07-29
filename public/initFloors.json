@@ -296,14 +296,14 @@
             "wallPlace": "down",
             "margin": 400,
             "width": 75,
-            "direction": "leftPull"
+            "direction": "rightPush"
           },
           {
             "id": "1-03-02",
             "wallPlace": "down",
             "margin": 475,
             "width": 75,
-            "direction": "rightPull"
+            "direction": "leftPush"
           },
           {
             "id": "1-03-03",

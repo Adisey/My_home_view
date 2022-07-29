@@ -1,0 +1,264 @@
+$ul: 100% 0 0 0;
+$ur: 0 100% 0 0;
+$dl: 0 0 0 100%;
+$dr: 0 0 100% 0;
+$hideDoorColor: lightgrey;
+$bc: #C3F6FC;
+
+.main {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  .hole {
+    position: absolute;
+
+    padding: 0;
+
+    background-color: white;
+
+    .door {
+      position: absolute;
+
+      border: 1px dashed black;
+
+      font-size: 8px;
+    }
+  }
+
+  .holeDoorHorizontal {
+    border-top: 2px solid $bc !important;
+    border-bottom: 2px solid $bc !important;
+    background-color: $bc !important;
+
+    .door {
+      left: -2px;
+
+      height: 100%;
+    }
+
+    .doorUpLeft,
+    .doorUpRight,
+    .doorDownLeft,
+    .doorDownRight {
+      display: none;
+    }
+
+    /* --- Up  ---- */
+
+    .doorUpRightPull {
+      top: 50%;
+
+      border-top-color: $hideDoorColor;
+      border-right-width: 2px;
+      border-right-style: solid;
+      border-radius: $dl;
+    }
+
+    .doorUpRightPush {
+      bottom: 50%;
+
+      border-right-width: 2px;
+      border-right-style: solid;
+      border-bottom-color: $hideDoorColor;
+      border-radius: $ul;
+    }
+
+    .doorUpLeftPush {
+      bottom: 50%;
+
+      border-bottom-color: $hideDoorColor;
+
+      border-left-width: 2px;
+      border-left-style: solid;
+      border-radius: $ur;
+    }
+
+    .doorUpLeftPull {
+      top: 50%;
+
+      border-bottom-color: $hideDoorColor;
+      border-left-width: 2px;
+      border-left-style: solid;
+      border-radius: $dr;
+    }
+
+    /* --- Down  ---- */
+    .doorDownRightPull {
+      bottom: 50%;
+
+      border-top-color: $hideDoorColor;
+      border-left-width: 2px;
+      border-left-style: solid;
+      border-radius: $ur;
+    }
+
+    .doorDownRightPush {
+      top: 50%;
+
+      border-bottom-color: $hideDoorColor;
+      border-left-width: 2px;
+      border-left-style: solid;
+      border-radius: $dr;
+    }
+
+    .doorDownLeftPush {
+      top: 50%;
+
+      border-right-width: 2px;
+      border-right-style: solid;
+      border-bottom-color: $hideDoorColor;
+      border-radius: $dl;
+    }
+
+    .doorDownLeftPull {
+      bottom: 50%;
+
+      border-right-width: 2px;
+      border-right-style: solid;
+      border-bottom-color: $hideDoorColor;
+      border-radius: $ul;
+    }
+  }
+
+  .holeHorizontal {
+    border-top: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid white;
+    border-left: 2px solid black;
+
+    .glass1 {
+      height: 50%;
+
+      border-top: 1px solid blue;
+      border-bottom: 1px solid blue;
+    }
+
+    .glass2 {
+      height: 50%;
+
+      border-bottom: 1px solid blue;
+    }
+  }
+
+  .holeDoorVertical {
+    border-right: 2px solid $bc !important;
+    border-left: 2px solid $bc !important;
+    background-color: $bc !important;
+
+    .door {
+      top: -2px;
+    }
+
+    .doorLeftRight,
+    .doorLeftLeft,
+    .doorRightLeft,
+    .doorRightRight {
+      display: none;
+    }
+
+    /* --- Right  ---- */
+
+    .doorRightRightPull {
+      right: 50%;
+
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-left-color: $hideDoorColor;
+      border-radius: $ul;
+    }
+
+    .doorRightRightPush {
+      left: 50%;
+
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-left-color: $hideDoorColor;
+      border-radius: $ur;
+    }
+
+    .doorRightLeftPush {
+      left: 50%;
+
+      border-top-width: 2px;
+      border-top-style: solid;
+      border-left-color: $hideDoorColor;
+      border-radius: $dr;
+    }
+
+    .doorRightLeftPull {
+      right: 50%;
+
+      border-top-width: 2px;
+      border-top-style: solid;
+      border-left-color: $hideDoorColor;
+      border-radius: $dl;
+    }
+
+    /* --- Left  ---- */
+
+    .doorLeftRightPull {
+      left: 50%;
+
+      border-top-width: 2px;
+      border-top-style: solid;
+      border-left-color: $hideDoorColor;
+      border-radius: $dr;
+    }
+
+    .doorLeftRightPush {
+      right: 50%;
+
+      border-top-width: 2px;
+      border-top-style: solid;
+      border-right-color: $hideDoorColor;
+      border-radius: $dl;
+    }
+
+    .doorLeftLeftPush {
+      right: 50%;
+
+      border-right-color: $hideDoorColor;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-radius: $ul;
+    }
+
+    .doorLeftLeftPull {
+      left: 50%;
+
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-left-color: $hideDoorColor;
+      border-radius: $ur;
+    }
+  }
+
+  .holeVertical {
+    display: flex;
+
+    border-top: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid black;
+    border-left: 2px solid white;
+
+    .glass1 {
+      width: 50%;
+      height: 100%;
+
+      border-right: 1px solid blue;
+
+      border-left: 1px solid blue;
+    }
+
+    .glass2 {
+      width: 50%;
+      height: 100%;
+
+      border-right: 1px solid blue;
+    }
+  }
+}

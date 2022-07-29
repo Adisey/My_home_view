@@ -4,3 +4,7 @@ export const asNumber = (value: IAsNumberValue): number => {
   const numValue = Number(value);
   return isNaN(numValue) ? 0 : numValue;
 };
+
+export const upperFirsLetter = (value = ""): string => {
+  return value.charAt(0).toUpperCase() + value.slice(1);
+};

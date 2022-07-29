@@ -22,6 +22,12 @@ export type IDoorSettings = IWindowSettings & {
   direction?: IDoorDirection;
 };
 
+export type IWallHolesType = "window" | "door";
+
+export type IWallHoleSettings = IDoorSettings & {
+  type: IWallHolesType;
+};
+
 export type IRoomSettings = ILightStatus &
   IWidthWalls & {
     id: string;

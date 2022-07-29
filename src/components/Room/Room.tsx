@@ -5,7 +5,7 @@ import {
   IHouseFloorSettings,
   IRoomSettings,
 } from "../../interfaces";
-import { Doors, Light, Windows } from "../";
+import { Light, WallHoles } from "../";
 import cx from "classnames";
 import Styles from "./Room.module.scss";
 import { asNumber } from "../../instrument";
@@ -61,8 +61,7 @@ export const Room: React.FC<IRoomProps> = ({
         )
       </div>
       <div className={Styles.covering}>
-        <Doors floor={floor} room={room} />
-        <Windows floor={floor} room={room} />
+        <WallHoles floor={floor} room={room} />
         <Light
           id={id}
           isLightActive={isLightActive}
