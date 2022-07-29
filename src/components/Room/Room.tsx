@@ -5,7 +5,7 @@ import {
   IHouseFloorSettings,
   IRoomSettings,
 } from "../../interfaces";
-import { Light, WallHoles } from "../";
+import { Light, Stairs, WallHoles } from "../";
 import cx from "classnames";
 import Styles from "./Room.module.scss";
 import { asNumber } from "../../instrument";
@@ -50,6 +50,7 @@ export const Room: React.FC<IRoomProps> = ({
     paddingBottom: `${asNumber(wallDown)}px`,
     paddingLeft: `${asNumber(wallLeft)}px`,
   };
+
   return (
     <div
       {...props}
@@ -61,6 +62,7 @@ export const Room: React.FC<IRoomProps> = ({
         )
       </div>
       <div className={Styles.covering}>
+        <Stairs room={room} />
         <WallHoles floor={floor} room={room} />
         <Light
           id={id}

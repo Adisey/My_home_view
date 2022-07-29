@@ -110,7 +110,7 @@
         "title": "corridor",
         "startX": 0,
         "startY": 500,
-        "lengthX": 1000,
+        "lengthX": 800,
         "lengthY": 200,
         "windows": [
           {
@@ -127,6 +127,86 @@
             "width": 100
           }
         ]
+      },
+
+      {
+        "id": "0-05",
+        "title": "Stairment 01",
+        "isLightActive": true,
+        "startX": 800,
+        "startY": 500,
+        "lengthX": 200,
+        "lengthY": 200,
+        "doors": [
+          {
+            "id": "0-05-01-d",
+            "wallPlace": "left",
+            "margin": 0,
+            "width": 170,
+            "internalDepth": 10
+          }
+        ]
+      },
+      {
+        "id": "0-06",
+        "title": "Stairment 0 Up",
+        "isLightActive": true,
+        "startX": 800,
+        "startY": 700,
+        "lengthX": 100,
+        "lengthY": 200,
+        "stairs": "up",
+        "doors": [
+          {
+            "id": "0-06-01-d",
+            "wallPlace": "up",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          },
+          {
+            "id": "1-06-02-d",
+            "wallPlace": "down",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          }
+        ]
+      },
+      {
+        "id": "0-07",
+        "title": "Stairment 0 Down",
+        "isLightActive": true,
+        "startX": 900,
+        "startY": 700,
+        "lengthX": 100,
+        "lengthY": 200,
+        "stairs": "down",
+        "doors": [
+          {
+            "id": "0-07-01-d",
+            "wallPlace": "up",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          },
+          {
+            "id": "0-07-02-d",
+            "wallPlace": "down",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          }
+        ]
+      },
+      {
+        "id": "0-08",
+        "title": "Stairment 02",
+        "isLightActive": true,
+        "startX": 800,
+        "startY": 900,
+        "lengthX": 200,
+        "lengthY": 100
       }
     ]
   },
@@ -202,7 +282,7 @@
         "isLightActive": true,
         "startX": 0,
         "startY": 600,
-        "lengthX": 1000,
+        "lengthX": 800,
         "lengthY": 400,
         "doors": [
           {
@@ -243,22 +323,103 @@
             "width": 300
           },
           {
-            "id": "1-03-03",
-            "wallPlace": "down",
-            "margin": 600,
-            "width": 300
-          },
-          {
             "id": "1-03-04",
             "wallPlace": "left",
             "margin": 50,
             "width": 300
+          }
+        ]
+      },
+      {
+        "id": "1-04",
+        "title": "Stairment 11",
+        "isLightActive": true,
+        "startX": 800,
+        "startY": 600,
+        "lengthX": 200,
+        "lengthY": 100,
+        "doors": [
+          {
+            "id": "1-04-01-d",
+            "wallPlace": "left",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          }
+        ],
+        "windows": [
+          {
+            "id": "1-04-01-w",
+            "wallPlace": "right",
+            "margin": 15,
+            "width": 50
+          }
+        ]
+      },
+      {
+        "id": "1-05",
+        "title": "Stairment 1 Up",
+        "isLightActive": true,
+        "startX": 800,
+        "startY": 700,
+        "lengthX": 100,
+        "lengthY": 200,
+        "doors": [
+          {
+            "id": "1-05-01-d",
+            "wallPlace": "up",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
           },
           {
-            "id": "1-03-05",
-            "wallPlace": "right",
-            "margin": 50,
-            "width": 300
+            "id": "1-05-02-d",
+            "wallPlace": "down",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          }
+        ]
+      },
+      {
+        "id": "1-06",
+        "title": "Stairment 1 Down",
+        "isLightActive": true,
+        "startX": 900,
+        "startY": 700,
+        "lengthX": 100,
+        "lengthY": 200,
+        "doors": [
+          {
+            "id": "1-06-01-d",
+            "wallPlace": "up",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          },
+          {
+            "id": "1-06-02-d",
+            "wallPlace": "down",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          }
+        ]
+      },
+      {
+        "id": "1-07",
+        "title": "Stairment 12",
+        "isLightActive": true,
+        "startX": 800,
+        "startY": 900,
+        "lengthX": 200,
+        "lengthY": 100,
+        "windows": [
+          {
+            "id": "1-07-01-w",
+            "wallPlace": "down",
+            "margin": 15,
+            "width": 150
           }
         ]
       }

@@ -1,0 +1,140 @@
+.main {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  .stair {
+    color: gray;
+
+    font-size: 8px;
+  }
+
+  .vertical {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    justify-content: space-between;
+
+    height: 100%;
+
+    .stair {
+      position: relative;
+
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+
+      &:not(:first-child, :last-child) {
+        &::before {
+          position: absolute;
+          top: -10px;
+          left: 50%;
+
+          content: "";
+
+          border: 1px solid black;
+          border-bottom: 40px solid black;
+        }
+      }
+    }
+  }
+
+  .horizontal {
+  }
+
+  .up {
+    .stair {
+      &:first-child {
+        &::after {
+          position: absolute;
+          bottom: 3px;
+          left: calc(50% - 4px);
+
+          content: "";
+
+          border: 5px solid transparent;
+          border-bottom: 10px solid black;
+        }
+      }
+
+      &:last-child {
+        &::after {
+          position: absolute;
+          top: -1px;
+          left: calc(50% - 4px);
+
+          content: "";
+
+          border: 5px solid transparent;
+          border-bottom: 6px solid black;
+        }
+
+        &::before {
+          position: absolute;
+          top: 10px;
+          left: calc(50% - 4px);
+
+          content: "";
+
+          border: 5px solid transparent;
+          border-top: 6px solid black;
+        }
+      }
+    }
+  }
+
+  .down {
+    .stair {
+      &:first-child {
+        &::after {
+          position: absolute;
+          top: -1px;
+          left: calc(50% - 4px);
+
+          content: "";
+
+          border: 5px solid transparent;
+          border-bottom: 6px solid black;
+        }
+
+        &::before {
+          position: absolute;
+          top: 10px;
+          left: calc(50% - 4px);
+
+          content: "";
+
+          border: 5px solid transparent;
+          border-top: 6px solid black;
+        }
+      }
+
+      &:last-child {
+        &::before {
+          position: absolute;
+          top: 3px;
+          left: calc(50% - 4px);
+
+          content: "";
+
+          border: 5px solid transparent;
+          border-top: 10px solid black;
+        }
+      }
+    }
+  }
+
+  .left {
+  }
+
+  .right {
+  }
+
+  .red {
+    background-color: red;
+  }
+}

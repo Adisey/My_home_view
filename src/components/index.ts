@@ -4,4 +4,5 @@ export * from "./FloorsList/FloorsList";
 export * from "./Light/Light";
 export * from "./Logo/Logo";
 export * from "./Room/Room";
+export * from "./Stairs/Stairs";
 export * from "./WallHoles/WallHoles";
