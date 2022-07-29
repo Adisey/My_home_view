@@ -98,9 +98,7 @@ const WallHole: React.FC<IWallHoleProps> = ({
       <div
         className={cx(Styles.door, Styles[doorCanvasStyleName])}
         style={doorStyle}
-      >
-        {room.title} {hole.id} {hole.wallPlace} {hole.direction}
-      </div>
+      />
     );
 
   return (

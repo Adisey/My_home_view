@@ -18,36 +18,23 @@
           {
             "id": "1-01-01",
             "wallPlace": "left",
-            "margin": 50,
-            "width": 50,
-            "direction": "leftPush"
+            "margin": 150,
+            "width": 75,
+            "direction": "rightPush"
           },
           {
             "id": "1-01-02",
             "wallPlace": "left",
-            "margin": 150,
-            "width": 50,
-            "direction": "leftPull"
+            "margin": 225,
+            "width": 75,
+            "direction": "leftPush"
           },
           {
             "id": "1-01-03",
-            "wallPlace": "left",
-            "margin": 250,
-            "width": 50,
-            "direction": "rightPush"
-          },
-          {
-            "id": "1-01-04",
-            "wallPlace": "left",
-            "margin": 350,
-            "width": 50,
-            "direction": "rightPull"
-          },
-          {
-            "id": "1-01-05",
-            "wallPlace": "right",
-            "margin": 100,
+            "wallPlace": "down",
+            "margin": 550,
             "width": 100,
+            "direction": "rightPush",
             "internalDepth": 10
           }
         ],
@@ -69,39 +56,20 @@
         "lengthY": 500,
         "doors": [
           {
-            "id": "1-02-01",
-            "wallPlace": "right",
+            "id": "1-02-01-d",
+            "wallPlace": "down",
             "margin": 50,
-            "width": 50,
-            "direction": "leftPush"
-          },
-          {
-            "id": "1-02-02",
-            "wallPlace": "right",
-            "margin": 150,
-            "width": 50,
-            "direction": "leftPull"
-          },
-          {
-            "id": "1-02-03",
-            "wallPlace": "right",
-            "margin": 250,
-            "width": 50,
-            "direction": "rightPush"
-          },
-          {
-            "id": "1-02-04",
-            "wallPlace": "right",
-            "margin": 350,
-            "width": 50,
-            "direction": "rightPull"
-          },
-          {
-            "id": "1-02-05",
-            "wallPlace": "left",
-            "margin": 300,
-            "width": 100,
+            "width": 75,
+            "direction": "leftPush",
             "internalDepth": 10
+          }
+        ],
+        "windows": [
+          {
+            "id": "0-02-01-w",
+            "wallPlace": "right",
+            "margin": 100,
+            "width": 100
           }
         ]
       },
@@ -112,6 +80,16 @@
         "startY": 700,
         "lengthX": 800,
         "lengthY": 500,
+        "doors": [
+          {
+            "id": "1-03-01-d",
+            "wallPlace": "up",
+            "margin": 600,
+            "width": 75,
+            "direction": "leftPush",
+            "internalDepth": 10
+          }
+        ],
         "windows": [
           {
             "id": "0-03-01",
@@ -134,86 +112,6 @@
         "startY": 500,
         "lengthX": 1000,
         "lengthY": 200,
-        "doors": [
-          {
-            "id": "1-04-01",
-            "wallPlace": "up",
-            "margin": 100,
-            "width": 50,
-            "direction": "leftPull",
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-02",
-            "wallPlace": "up",
-            "margin": 200,
-            "width": 50,
-            "direction": "leftPush",
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-03",
-            "wallPlace": "up",
-            "margin": 300,
-            "width": 50,
-            "direction": "rightPull",
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-04",
-            "wallPlace": "up",
-            "margin": 400,
-            "width": 50,
-            "direction": "rightPush",
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-05",
-            "wallPlace": "up",
-            "margin": 600,
-            "width": 50,
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-06",
-            "wallPlace": "down",
-            "margin": 300,
-            "width": 50,
-            "direction": "leftPull",
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-07",
-            "wallPlace": "down",
-            "margin": 400,
-            "width": 50,
-            "direction": "leftPush",
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-08",
-            "wallPlace": "down",
-            "margin": 500,
-            "width": 50,
-            "direction": "rightPull",
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-09",
-            "wallPlace": "down",
-            "margin": 600,
-            "width": 50,
-            "direction": "rightPush",
-            "internalDepth": 10
-          },
-          {
-            "id": "1-04-10",
-            "wallPlace": "down",
-            "margin": 200,
-            "width": 50,
-            "internalDepth": 10
-          }
-        ],
         "windows": [
           {
             "id": "0-04-01",
@@ -266,19 +164,35 @@
         "startY": 0,
         "lengthX": 700,
         "lengthY": 600,
-        "windows": [
+        "doors": [
           {
-            "id": "1-02-01",
+            "id": "1-02-01-d",
             "wallPlace": "left",
             "margin": 50,
             "width": 100,
             "internalDepth": 35
           },
           {
-            "id": "1-02-02",
+            "id": "1-02-02-d",
             "wallPlace": "up",
-            "margin": 500,
-            "width": 100
+            "margin": 300,
+            "width": 100,
+            "direction": "leftPush"
+          }
+        ],
+        "windows": [
+          {
+            "id": "1-02-01-w",
+            "wallPlace": "left",
+            "margin": 250,
+            "width": 200,
+            "internalDepth": 35
+          },
+          {
+            "id": "1-02-02-w",
+            "wallPlace": "up",
+            "margin": 300,
+            "width": 300
           }
         ]
       },
