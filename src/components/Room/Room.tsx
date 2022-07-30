@@ -40,16 +40,25 @@ export const Room: React.FC<IRoomProps> = ({
   const numberStartY = asNumber(startY);
   const numberLengthX = asNumber(lengthX);
   const numberLengthY = asNumber(lengthY);
+  const numberWallUp = asNumber(wallUp);
+  const numberWallRight = asNumber(wallRight);
+  const numberWallDown = asNumber(wallDown);
+  const numberWallLeft = asNumber(wallLeft);
   const positionStyles: CSS.Properties = {
     gridRowStart: numberStartY + 1,
     gridColumnStart: numberStartX + 1,
     gridRowEnd: numberStartY + numberLengthY,
     gridColumnEnd: numberStartX + numberLengthX,
-    paddingTop: `${asNumber(wallUp)}px`,
-    paddingRight: `${asNumber(wallRight)}px`,
-    paddingBottom: `${asNumber(wallDown)}px`,
-    paddingLeft: `${asNumber(wallLeft)}px`,
+    paddingTop: `${numberWallUp}px`,
+    paddingRight: `${numberWallRight}px`,
+    paddingBottom: `${numberWallDown}px`,
+    paddingLeft: `${numberWallLeft}px`,
   };
+
+  const aria =
+    ((numberLengthX - numberWallRight - numberWallRight) *
+      (numberLengthY - numberWallUp - numberWallDown)) /
+    10000;
 
   return (
     <div
@@ -58,8 +67,7 @@ export const Room: React.FC<IRoomProps> = ({
       style={positionStyles}
     >
       <div title={title} className={Styles.title}>
-        {title} ({(asNumber(lengthX) * asNumber(lengthY)) / 10000} m<sup>2</sup>
-        )
+        {title} ({aria} m<sup>2</sup>)
       </div>
       <div className={Styles.covering}>
         <Stairs room={room} />

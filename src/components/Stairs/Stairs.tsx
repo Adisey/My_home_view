@@ -18,11 +18,10 @@ export const Stairs: React.FC<IStairs> = ({
     const stairsCount =
       asNumber(stairs === "up" || stairs === "down" ? lengthY : lengthX) / 25;
 
-    console.log(Date.now(), `--(Stairs)-  ->`, room.title, stairs, stairsCount);
-    const aaa: ReactNode[] = [];
+    const stairsJSX: ReactNode[] = [];
 
     for (let s = 1; s <= stairsCount; s++) {
-      aaa.push(
+      stairsJSX.push(
         <div key={s} className={Styles.stair}>
           <div className={Styles.line}></div>
           {s}
@@ -38,7 +37,7 @@ export const Stairs: React.FC<IStairs> = ({
             [Styles.horizontal]: stairs === "left" || stairs === "right",
           })}
         >
-          {aaa}
+          {stairsJSX}
         </div>
       </div>
     );
