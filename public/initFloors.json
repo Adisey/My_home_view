@@ -128,7 +128,6 @@
           }
         ]
       },
-
       {
         "id": "0-05",
         "title": "Stairment 01",
@@ -364,6 +363,7 @@
         "startY": 700,
         "lengthX": 100,
         "lengthY": 200,
+        "stairs": "up",
         "doors": [
           {
             "id": "1-05-01-d",
@@ -389,6 +389,7 @@
         "startY": 700,
         "lengthX": 100,
         "lengthY": 200,
+        "stairs": "down",
         "doors": [
           {
             "id": "1-06-01-d",
@@ -477,6 +478,77 @@
             "width": 200
           }
         ]
+      },
+
+      {
+        "id": "4-05",
+        "title": "Stairment 4-1",
+        "isLightActive": true,
+        "startX": 200,
+        "startY": 800,
+        "lengthX": 200,
+        "lengthY": 200
+      },
+      {
+        "id": "4-06",
+        "title": "Stairment 0 Right",
+        "isLightActive": true,
+        "startX": 400,
+        "startY": 900,
+        "lengthX": 400,
+        "lengthY": 100,
+        "stairs": "right",
+        "doors": [
+          {
+            "id": "0-06-01-d",
+            "wallPlace": "left",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          },
+          {
+            "id": "1-06-02-d",
+            "wallPlace": "right",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          }
+        ]
+      },
+      {
+        "id": "0-07",
+        "title": "Stairment 0 Left",
+        "isLightActive": true,
+        "startX": 600,
+        "startY": 800,
+        "lengthX": 200,
+        "lengthY": 100,
+        "stairs": "left",
+        "doors": [
+          {
+            "id": "0-07-01-d",
+            "wallPlace": "left",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 210
+          },
+          {
+            "id": "0-07-02-d",
+            "wallPlace": "right",
+            "margin": 0,
+            "width": 80,
+            "internalDepth": 10
+          }
+        ]
+      },
+      {
+        "id": "0-08",
+        "title": "Stairment 4-2",
+        "isLightActive": true,
+        "startX": 800,
+        "startY": 800,
+        "lengthX": 200,
+        "lengthY": 200
       }
     ]
   }
