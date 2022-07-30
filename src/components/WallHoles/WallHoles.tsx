@@ -9,7 +9,7 @@ import {
   IWindowSettings,
 } from "../../interfaces";
 import { defaultDoor, defaultWindow } from "../../settings/appConfig";
-import { asNumber, upperFirsLetter } from "../../instrument";
+import { asNumber, showDoubleId, upperFirsLetter } from "../../instrument";
 import cx from "classnames";
 import Styles from "./WallHoles.module.scss";
 
@@ -152,13 +152,17 @@ export const WallHoles: React.FC<IWallHolesProps> = ({
       type: "door",
     })) || [];
 
-  const holes = [...windows, ...doors].map((hole: IWallHoleSettings) => (
-    <WallHole floor={floor} room={room} hole={hole} />
+  const holes = [...windows, ...doors];
+
+  process?.env?.NODE_ENV === "development" && showDoubleId(holes);
+
+  const holeJSX = holes.map((hole: IWallHoleSettings) => (
+    <WallHole key={hole.id} floor={floor} room={room} hole={hole} />
   ));
 
   return (
     <div {...props} className={cx(Styles.main, className)}>
-      {holes}
+      {holeJSX}
     </div>
   );
 };

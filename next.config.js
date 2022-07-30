@@ -3,6 +3,7 @@
 module.exports = {
   reactStrictMode: false,
   webpack(config, { isServer }) {
+    config.resolve.fallback = { fs: false };
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],

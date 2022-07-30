@@ -6,6 +6,7 @@ import {
 } from "../interfaces";
 
 export const appConfig = {
+  publicFile: "public/initFloors.json",
   extendWall: 20,
   internalWall: 10,
 };
@@ -44,5 +45,4 @@ export const defaultDoor: IDoorSettings = {
   wallPlace: "up",
   margin: 20,
   width: 50,
-  direction: "left",
 };

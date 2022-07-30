@@ -16,14 +16,14 @@
         "lengthY": 500,
         "doors": [
           {
-            "id": "1-01-01",
+            "id": "0-01-01-d",
             "wallPlace": "left",
             "margin": 150,
             "width": 75,
             "direction": "rightPush"
           },
           {
-            "id": "1-01-02",
+            "id": "0-01-02-d",
             "wallPlace": "left",
             "margin": 225,
             "width": 75,
@@ -92,13 +92,13 @@
         ],
         "windows": [
           {
-            "id": "0-03-01",
+            "id": "0-03-01-w",
             "wallPlace": "down",
             "margin": 100,
             "width": 100
           },
           {
-            "id": "0-03-01",
+            "id": "0-03-02-w",
             "wallPlace": "left",
             "margin": 50,
             "width": 100
@@ -114,14 +114,14 @@
         "lengthY": 200,
         "windows": [
           {
-            "id": "0-04-01",
+            "id": "0-04-01-w",
             "wallPlace": "down",
             "margin": 50,
             "width": 50,
             "internalDepth": 10
           },
           {
-            "id": "0-04-01",
+            "id": "0-04-02-w",
             "wallPlace": "left",
             "margin": 50,
             "width": 100
@@ -227,7 +227,7 @@
         "wallRight": 30,
         "windows": [
           {
-            "id": "1-01-01",
+            "id": "1-01-01-w",
             "wallPlace": "up",
             "margin": 50,
             "width": 100
@@ -285,7 +285,7 @@
         "lengthY": 400,
         "doors": [
           {
-            "id": "1-03-01",
+            "id": "1-03-01-d",
             "wallPlace": "down",
             "margin": 400,
             "width": 75,
@@ -307,7 +307,7 @@
             "internalDepth": 10
           },
           {
-            "id": "1-03-01",
+            "id": "1-03-04-d",
             "wallPlace": "up",
             "margin": 300,
             "width": 300,
@@ -316,13 +316,13 @@
         ],
         "windows": [
           {
-            "id": "1-03-01",
+            "id": "1-03-01-w",
             "wallPlace": "down",
             "margin": 50,
             "width": 300
           },
           {
-            "id": "1-03-04",
+            "id": "1-03-02-w",
             "wallPlace": "left",
             "margin": 50,
             "width": 300
@@ -516,7 +516,7 @@
         ]
       },
       {
-        "id": "0-07",
+        "id": "4-07",
         "title": "Stairment 0 Left",
         "isLightActive": true,
         "startX": 600,
@@ -526,14 +526,14 @@
         "stairs": "left",
         "doors": [
           {
-            "id": "0-07-01-d",
+            "id": "4-07-01-d",
             "wallPlace": "left",
             "margin": 0,
             "width": 80,
             "internalDepth": 210
           },
           {
-            "id": "0-07-02-d",
+            "id": "4-07-02-d",
             "wallPlace": "right",
             "margin": 0,
             "width": 80,
@@ -542,7 +542,7 @@
         ]
       },
       {
-        "id": "0-08",
+        "id": "4-08",
         "title": "Stairment 4-2",
         "isLightActive": true,
         "startX": 800,

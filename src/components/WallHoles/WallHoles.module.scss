@@ -40,10 +40,8 @@ $bc: #C3F6FC;
       height: 100%;
     }
 
-    .doorUpLeft,
-    .doorUpRight,
-    .doorDownLeft,
-    .doorDownRight {
+    .doorUp,
+    .doorDown {
       display: none;
     }
 
@@ -153,10 +151,8 @@ $bc: #C3F6FC;
       top: -2px;
     }
 
-    .doorLeftRight,
-    .doorLeftLeft,
-    .doorRightLeft,
-    .doorRightRight {
+    .doorLeft,
+    .doorRight {
       display: none;
     }
 
