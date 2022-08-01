@@ -10,12 +10,19 @@
   }
 
   .content {
-    display: grid;
+    .externalWall {
+      margin: 20px;
+      padding: 0;
 
-    padding: 15px;
+      border: 2px solid black;
 
-    border: 2px solid black;
-    column-gap: 0;
-    row-gap: 0;
+      .floor {
+        display: grid;
+
+        padding: 0;
+        column-gap: 0;
+        row-gap: 0;
+      }
+    }
   }
 }

@@ -9,14 +9,16 @@ export const appConfig = {
   publicFile: "public/initFloors.json",
   extendWall: 20,
   internalWall: 10,
+  wallLineDepth: 2,
 };
 
 export const defaultFloor: IFloorSettings = {
   id: "floor",
   title: "defaultFloor",
-  length: 1000, // cm.
-  width: 1000, // cm.
-  mainWall: appConfig.extendWall, // cm.
+  lengthY: 1000, // cm.
+  lengthX: 1000, // cm.
+  extendWall: appConfig.extendWall, // cm.
+  internalWall: appConfig.internalWall, // cm.
 };
 
 export const defaultRoom: IRoomSettings = {
@@ -27,10 +29,6 @@ export const defaultRoom: IRoomSettings = {
   lengthX: 500,
   lengthY: 500,
   isLightActive: true,
-  wallUp: appConfig.internalWall / 2,
-  wallRight: appConfig.internalWall / 2,
-  wallDown: appConfig.internalWall / 2,
-  wallLeft: appConfig.internalWall / 2,
 };
 
 export const defaultWindow: IWindowSettings = {

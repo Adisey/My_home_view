@@ -4,7 +4,7 @@ import {
   IDivMainProps,
   IDoorSettings,
   IHouseFloorSettings,
-  IRoomSettings,
+  IRoomSettingsWithWall,
   IWallHoleSettings,
   IWindowSettings,
 } from "../../interfaces";
@@ -26,24 +26,28 @@ const WallHole: React.FC<IWallHoleProps> = ({
   ...props
 }: IWallHoleProps): JSX.Element => {
   const width = asNumber(hole?.width);
+
   const positionStyles = (): CSS.Properties => {
-    const margin = asNumber(hole?.margin);
-    const widthRoomWall =
+    const margin: number = asNumber(hole?.margin);
+    const widthRoomWall: number =
       hole?.wallPlace === "up"
-        ? asNumber(room?.wallUp)
+        ? room?.wallUp
         : hole?.wallPlace === "down"
-        ? asNumber(room?.wallDown)
+        ? room?.wallDown
         : hole?.wallPlace === "left"
-        ? asNumber(room?.wallLeft)
+        ? room?.wallLeft
         : hole?.wallPlace === "right"
-        ? asNumber(room?.wallRight)
+        ? room?.wallRight
         : 0;
 
-    const ulc = hole?.wallPlace === "left" || hole?.wallPlace === "up" ? -1 : 0;
+    // const ulc = hole?.wallPlace === "left" || hole?.wallPlace === "up" ? 1 : 0;
     const depth =
       hole?.internalDepth !== undefined
-        ? asNumber(hole?.internalDepth) + 5
-        : asNumber(floor.mainWall) + widthRoomWall + ulc;
+        ? asNumber(hole?.internalDepth)
+        : hole.type === "door"
+        ? asNumber(floor.internalWall)
+        : widthRoomWall + 1;
+    // + ulc;
 
     switch (hole?.wallPlace) {
       case "up":
@@ -129,7 +133,7 @@ const WallHole: React.FC<IWallHoleProps> = ({
 
 type IWallHolesProps = IDivMainProps & {
   floor: IHouseFloorSettings;
-  room: IRoomSettings;
+  room: IRoomSettingsWithWall;
 };
 
 export const WallHoles: React.FC<IWallHolesProps> = ({

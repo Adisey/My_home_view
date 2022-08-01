@@ -10,6 +10,13 @@ export type IWidthWalls = {
   wallLeft?: number;
 };
 
+export type ISureWidthWalls = {
+  wallUp: number;
+  wallRight: number;
+  wallDown: number;
+  wallLeft: number;
+};
+
 export type IWindowSettings = {
   id: string;
   internalDepth?: number;
@@ -41,12 +48,15 @@ export type IRoomSettings = ILightStatus &
     doors?: IDoorSettings[];
   };
 
+export type IRoomSettingsWithWall = IRoomSettings & ISureWidthWalls;
+
 export type IFloorSettings = {
   id: string;
   title?: string;
-  length?: number;
-  width?: number;
-  mainWall?: number;
+  lengthY?: number; // old name is "length"
+  lengthX?: number; // old name is "width"
+  extendWall?: number;
+  internalWall?: number;
 };
 
 export type IHouseFloorSettings = IFloorSettings & {
