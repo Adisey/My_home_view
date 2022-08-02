@@ -38,7 +38,8 @@ export const Room: React.FC<IRoomProps> = ({
     isLightActive,
     isLightHide,
   } = room;
-  const { extendWall, internalWall } = floor;
+  const { extendWall } = floor;
+
   const lineDepth: number = appConfig.wallLineDepth;
 
   const numberExtendWall = extendWall
@@ -73,14 +74,14 @@ export const Room: React.FC<IRoomProps> = ({
   };
 
   const positionStyles: CSS.Properties = {
-    gridRowStart: numberWallLeft + numberStartY,
-    gridRowEnd: numberWallLeft + numberEndY,
-    gridColumnStart: numberWallUp + numberStartX,
-    gridColumnEnd: numberWallUp + numberEndX,
+    gridRowStart: numberWallUp + numberStartY,
+    gridRowEnd: numberWallUp + numberEndY,
+    gridColumnStart: numberWallLeft + numberStartX,
+    gridColumnEnd: numberWallLeft + numberEndX,
     borderWidth: `${lineDepth}px`,
   };
 
-  const aria = (numberLengthX * numberLengthY) / 10000;
+  const aria = ((numberLengthX * numberLengthY) / 10000).toFixed(2);
 
   return (
     <div

@@ -1,9 +1,10 @@
 = ToDo
 
-- fix calc floor size
-- move defaultFloor/Room/Window/Door to initFloors.JSON file
-- use absolute wall in JSON
++ fix calc floor size
++ move defaultFloor/Room/Window/Door to initFloors.JSON file
++ use absolute wall in JSON
 - add Balconies
 - add InternalWall as use Corner
 
+- add move rooms
 - add Zoom
