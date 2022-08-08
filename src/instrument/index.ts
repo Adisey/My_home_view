@@ -1,3 +1,5 @@
+import { IRoomSettings } from "../interfaces";
+
 type IAsNumberValue = string | number | undefined;
 
 export const asNumber = (value: IAsNumberValue): number => {
@@ -42,4 +44,8 @@ export const isTrue = (value: IValueTrue): boolean => {
   ];
 
   return varsTrue.includes(value);
+};
+
+export const roomAria = (room: IRoomSettings): number => {
+  return (asNumber(room.lengthX) * asNumber(room.lengthY)) / 10000;
 };

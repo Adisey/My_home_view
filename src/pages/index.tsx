@@ -18,6 +18,7 @@ interface IHomeProps {
 
 const Home: NextPage<IHomeProps> = (props: IHomeProps) => {
   const floors = useFloors();
+
   return (
     <div className={mainStyles.main}>
       <Head>

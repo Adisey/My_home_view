@@ -6,10 +6,10 @@ import {
   IRoomSettings,
 } from "../../interfaces";
 import { appConfig, defaultRoom } from "../../settings/appConfig";
+import { asNumber, roomAria } from "../../instrument";
 import { Room } from "../Room/Room";
 import cx from "classnames";
 import Styles from "./Floor.module.scss";
-import { asNumber } from "../../instrument";
 
 type IFloor = IDivMainProps & {
   floor: IHouseFloorSettings;
@@ -42,9 +42,16 @@ export const Floor: React.FC<IFloor> = ({
     <Room key={room.id} room={{ ...defaultRoom, ...room }} floor={floor} />
   ));
 
+  const floorAria = rooms
+    ?.map((room: IRoomSettings) => roomAria(room))
+    .reduce((s: number, a: number) => s + a)
+    .toFixed(2);
+
   return (
     <div {...props} className={cx(Styles.main, className)}>
-      <div className={Styles.title}>{title}</div>
+      <div className={Styles.title}>
+        {title} ({floorAria} m<sup>2</sup>)
+      </div>
       <div className={Styles.content}>
         <div className={Styles.externalWall} style={externalWallStyles}>
           <div className={Styles.floor} style={floorGridStyles}>

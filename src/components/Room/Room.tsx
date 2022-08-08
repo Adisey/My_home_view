@@ -6,11 +6,11 @@ import {
   IRoomSettings,
   IRoomSettingsWithWall,
 } from "../../interfaces";
-import { asNumber } from "../../instrument";
+import { appConfig } from "../../settings/appConfig";
+import { asNumber, roomAria } from "../../instrument";
 import { Light, Stairs, WallHoles } from "../";
 import cx from "classnames";
 import Styles from "./Room.module.scss";
-import { appConfig } from "../../settings/appConfig";
 
 type IRoomProps = IDivMainProps & {
   floor: IHouseFloorSettings;
@@ -51,9 +51,6 @@ export const Room: React.FC<IRoomProps> = ({
   const numberStartY: number = asNumber(startY) - lineDepth;
   const numberEndY: number = asNumber(startY) + asNumber(lengthY) + lineDepth;
 
-  const numberLengthX: number = asNumber(lengthX);
-  const numberLengthY: number = asNumber(lengthY);
-
   const numberWallUp: number = wallUp ? asNumber(wallUp) : numberExtendWall;
   const numberWallLeft: number = wallLeft
     ? asNumber(wallLeft)
@@ -81,7 +78,7 @@ export const Room: React.FC<IRoomProps> = ({
     borderWidth: `${lineDepth}px`,
   };
 
-  const aria = ((numberLengthX * numberLengthY) / 10000).toFixed(2);
+  const aria = roomAria(room).toFixed(2);
 
   return (
     <div

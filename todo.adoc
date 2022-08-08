@@ -1,8 +1,7 @@
 = ToDo
 
-+ fix calc floor size
-+ move defaultFloor/Room/Window/Door to initFloors.JSON file
-+ use absolute wall in JSON
++ add all Aria
+
 - add Balconies
 - add InternalWall as use Corner
 
